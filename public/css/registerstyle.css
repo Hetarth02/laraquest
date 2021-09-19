@@ -1,0 +1,130 @@
+.flexbox-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 16rem;
+    height: 16rem;
+    animation: logorotate ease 4s infinite;
+}
+
+@keyframes logorotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.flex-item2 {
+    flex-grow: 2;
+}
+
+.registerform {
+    width: 70%;
+    height: auto;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1f1f1f;
+    border-radius: 20px;
+    text-align: center;
+    color: rgb(0, 255, 242);
+}
+
+.registerform input[type="text"],
+input[type="password"], input[type="email"] {
+    width: 80%;
+    border: 1px solid white;
+    border-radius: 24px;
+    padding: 0.7rem;
+    outline: none;
+    background: none;
+    margin: 1rem auto;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.registerform input[type="text"]:hover,
+input[type="password"]:hover, input[type="email"]:hover {
+    border: 1px solid #8c1bce;
+}
+
+::placeholder {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #add8e6;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+.registerform button[type="submit"], button[type="reset"] {
+    border: 1px solid white;
+    border-radius: 24px;
+    padding: 0.6rem;
+    width: 35%;
+    outline: none;
+    background: none;
+    margin: 12px auto;
+    text-align: center;
+    color: #add8e6;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.registerform button[type="submit"]:hover, button[type="reset"]:hover {
+    color: whitesmoke;
+    background: #651494;
+}
+
+.registerform a {
+    color: #0fa6d8;
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.registerform a:hover {
+    text-decoration: underline;
+}
+
+.registerform h3 {
+    text-align: center;
+    color: #add8e6;
+    font-weight: normal;
+    margin: 1.2rem;
+    font-size: 2.5rem;
+}
+
+@media all and (max-width: 1247px) {
+
+    .flexbox-container {
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .registerform {
+        width: 80%;
+    }
+
+    .registerform input[type="text"],
+    input[type="password"], input[type="email"] {
+        padding: 0.5rem;
+        width: 70%;
+    }
+}
