@@ -1,0 +1,125 @@
+.row-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.flexbox-wrapper {
+    display: flex;
+    width: 80%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.forum-container{
+    width: 15rem;
+    height: 20rem;
+    color: #aea5f7;
+    margin: 0rem 1rem 1rem 0rem;
+    border-radius: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: #063535;
+}
+
+.forumbutton {
+    border: 1px none white;
+    border-radius: 24px;
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    width: 100%;
+    background: none;
+    margin: 0.4rem 1rem 0rem 0rem;
+    text-align: center;
+    color: rgb(45, 160, 0);
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: 0.25s;
+}
+
+.forumbutton:hover {
+    color: black;
+    background-color: aquamarine;
+}
+
+.forumform {
+    width: 35rem;
+    padding: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0c0c0cbd;
+    backdrop-filter: blur(3px);
+    text-align: center;
+}
+
+.forumform select {
+    border: 1px solid white;
+    border-radius: 14px;
+    padding: 8px 0px;
+    width: 12rem;
+    outline: none;
+    background: none;
+    margin: 1rem 0rem 0.5rem 0rem;
+    resize: none;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.forumform h3 {
+    font-size: 1.5rem;
+}
+
+.forumform option {
+    color: #063535;
+}
+
+.description {
+    border: 1px solid white;
+    border-radius: 14px;
+    padding: 11px 10px;
+    width: 28rem;
+    outline: none;
+    background: none;
+    margin: 1rem auto;
+    resize: none;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.description:hover {
+    border: 1px solid #46a438;
+}
+
+::placeholder {
+    text-align: center;
+    font-size: 1rem;
+    color: #e3ffc1;
+    font-weight: normal;
+    opacity: 0.6;
+}
+
+.forumform button[type="submit"],
+.forumform button[type="button"] {
+    border: 1px solid white;
+    border-radius: 24px;
+    padding: 8px;
+    width: 7rem;
+    background: none;
+    color: #46a438;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: 0.25s;
+}
+
+.forumform button[type="submit"]:hover,
+.forumform button[type="button"]:hover {
+    color: white;
+    background: #46a438;
+    font-size: 1.1rem;
+}

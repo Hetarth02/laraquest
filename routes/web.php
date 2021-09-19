@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeScreenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +23,13 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
+Route::get('/home', function () {
+    return view('home');
+});
 
 //Functional Routes
-//Route::get('/', [HomeScreenController::class, 'displayhomescreen']);
+Route::get('/', [HomeScreenController::class, 'displayhomescreen']);
 Route::post('/userregister', [LoginController::class, 'user_register']);
 Route::post('/userlogin', [LoginController::class, 'user_login']);
+Route::get('/profile', [UserController::class, 'user_profile']);
 Route::get('/logout', [LoginController::class, 'user_logout']);
