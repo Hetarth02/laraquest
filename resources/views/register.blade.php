@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form class="registerform" action="userregister" method="POST">
+    <form class="registerform" action="/userregister" method="POST">
         @csrf
         <h3>Register</h3>
         <div class="flexbox-container">

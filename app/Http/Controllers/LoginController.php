@@ -64,8 +64,7 @@ class LoginController extends Controller
             if (Auth::attempt($data)) {
                 //Generating unique user session
                 $request->session()->regenerate();
-                return response('Logged in!');
-                //return redirect('/home');
+                return redirect('/');
             } else {
                 return redirect('/login')->with('alert', 'User not found');
             }
@@ -77,7 +76,6 @@ class LoginController extends Controller
         //Deleting user session and all its data
         Session::flush();
         Auth::logout();
-        return response('Logged out!');
-        //return redirect('/home');
+        return redirect('/');
     }
 }
