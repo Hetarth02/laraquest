@@ -47,6 +47,9 @@
                         required=""
                     />
                 </div>
+                <div class="forgotpassword">
+                    <a href="#" id="forgotpassword" data-toggle="modal" data-target="#pform">Forgot Password!</a>
+                </div>
                 <button type="submit">Login</button>
                 <div>
                     Not registered,
@@ -55,6 +58,23 @@
             </div>
         </div>
     </form>
+
+    <div id="pform" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div>
+                    <form id="form" class="pform" action="/forgotpassword" method="POST">
+                        @csrf
+                        <div>
+                            <input type="text" name="username" class="pformtext" placeholder="username" required="">
+                            <input type="email" name="email" class="pformtext" placeholder="e-mail" required="">
+                        </div>
+                        <button type="submit">Send an E-mail!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         var msg = '{{Session::get('alert')}}';

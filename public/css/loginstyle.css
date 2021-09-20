@@ -96,12 +96,80 @@ input[type="password"]:hover {
     text-decoration: underline;
 }
 
+.forgotpassword {
+    width: 90%;
+    text-align: end;
+}
+
+#forgotpassword {
+    font-size: 1.1rem;
+}
+
 .loginform h3 {
     text-align: center;
     color: #add8e6;
     font-weight: normal;
     margin: 1.2rem;
     font-size: 3.5rem;
+}
+
+.pform {
+    width: 30rem;
+    padding: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 2rem;
+    backdrop-filter: blur(3px);
+    text-align: center;
+}
+
+.pform button[type="submit"] {
+    border: 1px solid white;
+    border-radius: 24px;
+    padding: 11px 0px;
+    width: 40%;
+    outline: none;
+    background: none;
+    margin: 8px auto;
+    text-align: center;
+    color: #46a438;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.pform button[type="submit"]:hover {
+    color: white;
+    background: #46a438;
+}
+
+.pformtext {
+    border: 1px solid white;
+    border-radius: 14px;
+    padding: 11px 10px;
+    width: 20rem;
+    outline: none;
+    background: none;
+    margin: 10px auto;
+    resize: none;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.pformtext:hover {
+    border: 1px solid #46a438;
+}
+
+.pformtext::placeholder {
+    text-align: center;
+    font-size: 1.5em;
+    color: #e3ffc1;
+    font-weight: normal;
+    opacity: 0.6;
 }
 
 @media all and (max-width: 726px) {

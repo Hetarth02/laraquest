@@ -33,4 +33,5 @@ Route::get('/logout', [LoginController::class, 'user_logout']);
 Route::post('/userregister', [LoginController::class, 'user_register']);
 Route::post('/userlogin', [LoginController::class, 'user_login']);
 Route::post('/createforum', [ForumController::class, 'createforum']);
-Route::post('/subsribe', [MailController::class, 'user_subscribe']);
+Route::post('/subscribe', [MailController::class, 'user_subscribe']);
+Route::post('/forgotpassword', [MailController::class, 'forgotpassword']);
