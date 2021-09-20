@@ -11,7 +11,7 @@
 
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
-        <a class="navbar-brand" href="home">Laraquest</a>
+        <a class="navbar-brand" href="/">Laraquest</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -48,7 +48,7 @@
                     />
                 </div>
                 <div class="forgotpassword">
-                    <a href="#" id="forgotpassword" data-toggle="modal" data-target="#pform">Forgot Password!</a>
+                    <a href="#" id="forgotpassword" data-toggle="modal" data-target="#pform">Forgot Password?</a>
                 </div>
                 <button type="submit">Login</button>
                 <div>

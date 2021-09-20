@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
-        <a class="navbar-brand" href="home">Laraquest</a>
+        <a class="navbar-brand" href="/">Laraquest</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,7 +19,11 @@
                 <li class="nav-item"><a class="nav-link" href="/">Forums</a></li>
                 <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                @if (empty(Auth::user()->username))
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                @else
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                @endif
             </ul>
         </div>
     </nav>

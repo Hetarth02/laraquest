@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile</title>
+    <title>Thread</title>
     <link rel="stylesheet" href="{{ URL::asset('css/base.css') }}" />
 </head>
 <body>
@@ -18,7 +18,11 @@
                 <li class="nav-item"><a class="nav-link" href="/">Forums</a></li>
                 <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                @if (empty(Auth::user()->username))
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                @else
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                @endif
             </ul>
         </div>
     </nav>

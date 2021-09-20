@@ -17,10 +17,28 @@
     width: 15rem;
     height: 20rem;
     color: #aea5f7;
+    overflow-x: auto;
+    scrollbar-width: none; /* To Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* To Hide scrollbar in IE v10+ */
     margin: 0rem 1rem 1rem 0rem;
     border-radius: 1rem;
     padding: 1rem 1rem 1rem 1rem;
     background-color: #063535;
+    transition: ease 700ms;
+}
+
+.forum-container::-webkit-scrollbar {
+    /* To Hide scrollbar with webkit support */
+    width: 0;
+    height: 0;
+}
+
+.forum-container h3 {
+    font-size: 2rem;
+}
+
+.forum-container p {
+    font-size: 1rem;
 }
 
 .forumbutton {

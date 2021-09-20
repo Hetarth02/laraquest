@@ -10,6 +10,19 @@
 </head>
 
 <body>
+    <nav class="navbar sticky-top navbar-dark menu">
+        <a class="navbar-brand" href="/">Laraquest</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/">Forums</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <form class="registerform" action="/userregister" method="POST">
         @csrf
         <h3>Register</h3>
