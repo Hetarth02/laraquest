@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thread</title>
+    @foreach ($thread as $thread)
+        <title>{{$thread->forum_name}}</title>
+    @endforeach
     <link rel="stylesheet" href="{{ URL::asset('css/base.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/threadstyle.css') }}" />
 </head>
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
@@ -15,17 +18,58 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="/">Forums</a></li>
-                <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="../">Forums</a></li>
+                <li class="nav-item"><a class="nav-link" href="../profile">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="../about">About</a></li>
                 @if (empty(Auth::user()->username))
-                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../login">Login</a></li>
                 @else
-                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../logout">Logout</a></li>
                 @endif
             </ul>
         </div>
     </nav>
+
+    <div class="row-container">
+        <div class="flexbox-wrapper">
+            @foreach ($thread as $thread)
+                <a href="../{{$thread->forum_id}}/{{$thread->thread_id}}">
+                    <div class="thread-container">
+                        <p>{{$thread->thread_description}}</p>
+                    </div>
+                </a>
+            @endforeach
+        </div>
+        <div class="create-thread">
+            <button class="threadbutton" type="button" data-toggle="modal" data-target="#createthread">+ Create Thread</button>
+            <div id="createthread" class="modal fade">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div>
+                            <form id="threadform" class="threadform" action="../createthread" method="POST">
+                                @csrf
+                                <h3>Create a new Thread</h3>
+                                <div>
+                                    <textarea
+                                        id="textarea"
+                                        class="description"
+                                        name="thread_description"
+                                        form="threadform"
+                                        rows="5"
+                                        cols="30"
+                                        wrap="soft"
+                                        placeholder="Enter question here..."
+                                    ></textarea>
+                                </div>
+                                <button type="submit">Create</button>
+                                <button type="button" data-dismiss="modal">Close</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         var msg = '{{Session::get('alert')}}';

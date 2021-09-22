@@ -31,11 +31,13 @@
     <div class="row-container">
         <div class="flexbox-wrapper">
             @foreach ($forum as $forum)
-                <div class="forum-container">
-                    <h3>{{$forum->forum_name}}</h3>
-                    <br>
-                    <p>{{$forum->forum_description}}</p>
-                </div>
+                <a href="/forum/{{$forum->forum_id}}">
+                    <div class="forum-container">
+                        <h3>{{$forum->forum_name}}</h3>
+                        <br>
+                        <p>{{$forum->forum_description}}</p>
+                    </div>
+                </a>
             @endforeach
         </div>
         <div class="create-forum">
@@ -46,7 +48,7 @@
                         <div>
                             <form id="forumform" class="forumform" action="/createforum" method="POST">
                                 @csrf
-                                <h3>Create Forum</h3>
+                                <h3>Create a Forum</h3>
                                 <div>
                                     <select class="forumlist" name="dropdown">
                                         <option value="C">C</option>

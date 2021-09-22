@@ -1,0 +1,109 @@
+.row-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.flexbox-wrapper {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.thread-container{
+    width: 95%;
+    height: auto;
+    color: #000000;
+    overflow-x: auto;
+    margin: 0rem 1rem 1rem 0rem;
+    border-radius: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: #ffffffbf;
+    transition: ease 700ms;
+}
+
+.thread-container p {
+    font-size: 1rem;
+}
+
+.threadbutton {
+    border: 1px none white;
+    border-radius: 24px;
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    width: 100%;
+    background: none;
+    margin: 0.4rem 1rem 0rem 0rem;
+    text-align: center;
+    color: rgb(45, 160, 0);
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: 0.25s;
+}
+
+.threadbutton:hover {
+    color: black;
+    background-color: aquamarine;
+}
+
+.threadform {
+    width: 35rem;
+    padding: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0c0c0cbd;
+    backdrop-filter: blur(3px);
+    text-align: center;
+}
+
+.description {
+    border: 1px solid white;
+    border-radius: 14px;
+    padding: 11px 10px;
+    width: 28rem;
+    outline: none;
+    background: none;
+    margin: 1rem auto;
+    resize: none;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.description:hover {
+    border: 1px solid #46a438;
+}
+
+::placeholder {
+    text-align: center;
+    font-size: 1rem;
+    color: #e3ffc1;
+    font-weight: normal;
+    opacity: 0.6;
+}
+
+.threadform button[type="submit"],
+.threadform button[type="button"] {
+    border: 1px solid white;
+    border-radius: 24px;
+    padding: 8px;
+    width: 7rem;
+    background: none;
+    color: #46a438;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: 0.25s;
+}
+
+.threadform button[type="submit"]:hover,
+.threadform button[type="button"]:hover {
+    color: white;
+    background: #46a438;
+    font-size: 1.1rem;
+}

@@ -20,13 +20,13 @@ class ForumController extends Controller
             $input = $request->all();
             //Validation
             $validator = Validator::make($input, [
-                'dropdown' => 'required',
+                'forum_name' => 'required',
                 'description' => 'required',
             ]);
             if ($validator->fails()) {
                 return redirect('/')->with('alert', 'Forum name and Description cannot be empty.');
             } else {
-                $forum_name = $input['dropdown'];
+                $forum_name = $input['forum_name'];
                 $forum_description = $input['description'];
                 $timestamp = new DateTime();
                 try {
@@ -35,6 +35,34 @@ class ForumController extends Controller
                     return redirect('/')->with('alert', 'Forum already exists or Something went wrong.');
                 }
                 return redirect('/');
+            }
+        }
+    }
+
+    public function createthread(Request $request, $id)
+    {
+        //If user is logged in then only create a forum
+        if (empty(Auth::user()->username)) {
+            return redirect('/login')->with('alert', 'Please login to ask a question.');
+        } else {
+            $input = $request->all();
+            //Validation
+            $validator = Validator::make($input, [
+                'description' => 'required',
+            ]);
+            if ($validator->fails()) {
+                return redirect('/forum/{id}')->with('alert', 'Question cannot be empty.');
+            } else {
+                $forum_name = DB::select('select forum_name from forums where forum_id = ?', [$id]);
+                $username = Auth::user()->username;
+                $forum_description = $input['description'];
+                $timestamp = new DateTime();
+                try {
+                    DB::insert('insert into threads (forum_id, forum_name, thread_description, username, timestamp) values (?, ?, ?, ?, ?)', [$id, $forum_name, $forum_description, $username, $timestamp]);
+                } catch (Exception $error) {
+                    return redirect('/forum/{id}')->with('alert', 'Something went wrong.');
+                }
+                return redirect('/forum/{id}');
             }
         }
     }
