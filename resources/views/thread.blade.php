@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @foreach ($thread as $thread)
-        <title>{{$thread->forum_name}}</title>
-    @endforeach
+    <title>{{$forum_name}}</title>
     <link rel="stylesheet" href="{{ URL::asset('css/base.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/threadstyle.css') }}" />
 </head>
@@ -36,6 +34,7 @@
                 <a href="../{{$thread->forum_id}}/{{$thread->thread_id}}">
                     <div class="thread-container">
                         <p>{{$thread->thread_description}}</p>
+                        <p>By: {{$thread->username}}</p>
                     </div>
                 </a>
             @endforeach
@@ -46,7 +45,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div>
-                            <form id="threadform" class="threadform" action="../createthread" method="POST">
+                            <form id="threadform" class="threadform" action="../{{$forum_id}}/createthread" method="POST">
                                 @csrf
                                 <h3>Create a new Thread</h3>
                                 <div>

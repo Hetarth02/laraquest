@@ -46,23 +46,25 @@ class ForumController extends Controller
             return redirect('/login')->with('alert', 'Please login to ask a question.');
         } else {
             $input = $request->all();
+            // $id = $request->session()->get('forum_id');
             //Validation
             $validator = Validator::make($input, [
-                'description' => 'required',
+                'thread_description' => 'required',
             ]);
             if ($validator->fails()) {
-                return redirect('/forum/{id}')->with('alert', 'Question cannot be empty.');
+                return redirect()->back()->with('alert', 'Question cannot be empty.');
             } else {
                 $forum_name = DB::select('select forum_name from forums where forum_id = ?', [$id]);
+                $forum_name = $forum_name[0]->forum_name;
                 $username = Auth::user()->username;
-                $forum_description = $input['description'];
+                $forum_description = $input['thread_description'];
                 $timestamp = new DateTime();
                 try {
                     DB::insert('insert into threads (forum_id, forum_name, thread_description, username, timestamp) values (?, ?, ?, ?, ?)', [$id, $forum_name, $forum_description, $username, $timestamp]);
                 } catch (Exception $error) {
-                    return redirect('/forum/{id}')->with('alert', 'Something went wrong.');
+                    return redirect()->back()->with('alert', 'Something went wrong.');
                 }
-                return redirect('/forum/{id}');
+                return redirect()->back();
             }
         }
     }

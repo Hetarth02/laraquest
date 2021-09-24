@@ -34,6 +34,6 @@ Route::get('/forum/{id}', [HomeScreenController::class, 'threadview']);
 Route::post('/userregister', [LoginController::class, 'user_register']);
 Route::post('/userlogin', [LoginController::class, 'user_login']);
 Route::post('/createforum', [ForumController::class, 'createforum']);
-Route::post('../{id}/createthread', [ForumController::class, 'createthread']);
+Route::post('/{id}/createthread', [ForumController::class, 'createthread']);
 Route::post('/subscribe', [MailController::class, 'user_subscribe']);
 Route::post('/forgotpassword', [MailController::class, 'forgotpassword']);
