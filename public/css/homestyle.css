@@ -67,7 +67,7 @@
 
 .forumbutton:hover {
     color: black;
-    background-color: aquamarine;
+    background-color: rgba(127, 255, 212, 0.9);
 }
 
 .forumform {
