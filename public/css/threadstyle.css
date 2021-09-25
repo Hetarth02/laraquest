@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    align-items: stretch;
+    align-items: flex-start;
     margin-top: 1.5rem;
 }
 
@@ -39,6 +39,17 @@
     cursor: pointer;
     outline: none;
     transition: 0.25s;
+}
+
+.filter-wrapper a {
+    color: #0fa6d8;
+    font-size: 0.9rem;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.filter-wrapper a:hover {
+    text-decoration: underline;
 }
 
 .filter-wrapper button:hover {

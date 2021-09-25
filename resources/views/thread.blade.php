@@ -16,13 +16,13 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="../">Forums</a></li>
-                <li class="nav-item"><a class="nav-link" href="../profile">Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="../about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/"><i class="bi bi-files"></i> Forums</a></li>
+                <li class="nav-item"><a class="nav-link" href="/profile"><i class="bi bi-people-fill"></i> Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about"><i class="bi bi-info-circle"></i> About</a></li>
                 @if (empty(Auth::user()->username))
-                    <li class="nav-item"><a class="nav-link" href="../login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login"><i class="bi bi-box-arrow-right"></i> Login</a></li>
                 @else
-                    <li class="nav-item"><a class="nav-link" href="../logout">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
                 @endif
             </ul>
         </div>
@@ -34,25 +34,24 @@
                 <a href="../{{$thread->forum_id}}/{{$thread->thread_id}}">
                     <div class="thread-container">
                         <p>{{$thread->thread_description}}</p>
-                        <p>By: {{$thread->username}}</p>
+                        <p><i class="bi bi-person-fill"></i> {{$thread->username}}</p>
                     </div>
                 </a>
             @endforeach
         </div>
         <div class="create-thread">
-            <button class="threadbutton" type="button" data-toggle="modal" data-target="#createthread">+ Create Thread</button>
+            <button class="threadbutton" type="button" data-toggle="modal" data-target="#createthread"><i class="bi bi-file-text"></i> Create Thread</button>
             <div class="filter-wrapper">
-                <span>Filter by:</span>
+                <span><i class="bi bi-funnel"></i> Filter by:</span>
                 @if ($isfiltered == true)
-                    <a href="/forum/{{$forum_id}}"><button>Unresolved</button></a>
-                    <a href="/forum/{{$forum_id}}"><button>Resolved</button></a>
-                    <a href="/forum/{{$forum_id}}"><button>No Replies</button></a>
-                    <a href="/forum/{{$forum_id}}">Reset filters</a>                    
+                    <a href="/forum/{{$forum_id}}"><button><i class="bi bi-question-circle"></i> Unresolved</button></a>
+                    <a href="/forum/{{$forum_id}}"><button><i class="bi bi-check-circle"></i> Resolved</button></a>
+                    <a href="/forum/{{$forum_id}}"><button><i class="bi bi-exclamation-circle"></i> No Replies</button></a>
+                    <a href="/forum/{{$forum_id}}"><i class="bi bi-bootstrap-reboot"></i> Reset filters</a>                    
                 @else
-                    <a href="../forum/{{$forum_id}}/filter/0"><button>Unresolved</button></a>
-                    <a href="../forum/{{$forum_id}}/filter/1"><button>Resolved</button></a>
-                    <a href="../forum/{{$forum_id}}/filter/2"><button>No Replies</button></a>
-                    <a href="../forum/{{$forum_id}}">Reset filters</a>
+                    <a href="../forum/{{$forum_id}}/filter/0"><button><i class="bi bi-question-circle"></i> Unresolved</button></a>
+                    <a href="../forum/{{$forum_id}}/filter/1"><button><i class="bi bi-check-circle"></i> Resolved</button></a>
+                    <a href="../forum/{{$forum_id}}/filter/2"><button><i class="bi bi-exclamation-circle"></i> No Replies</button></a>
                 @endif
             </div>
             <div id="createthread" class="modal fade">

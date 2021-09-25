@@ -17,6 +17,5 @@ class UserController extends Controller
             $user_data = DB::select('select * from users where username = ?', [$username]);
             return view('profile')->with('user_data', $user_data);
         }
-        
     }
 }

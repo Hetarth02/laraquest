@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile</title>
+    <title>Forums</title>
     <link rel="stylesheet" href="{{ URL::asset('css/base.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/aboutstyle.css') }}" />
 </head>
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
@@ -26,14 +27,6 @@
             </ul>
         </div>
     </nav>
-
-    <script>
-        var msg = '{{Session::get('alert')}}';
-        var exist = '{{Session::has('alert')}}';
-        if(exist){
-          alert(msg);
-        }
-    </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -16,13 +16,13 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="/">Forums</a></li>
-                <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/"><i class="bi bi-files"></i> Forums</a></li>
+                <li class="nav-item"><a class="nav-link" href="/profile"><i class="bi bi-people-fill"></i> Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about"><i class="bi bi-info-circle"></i> About</a></li>
                 @if (empty(Auth::user()->username))
-                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login"><i class="bi bi-box-arrow-right"></i> Login</a></li>
                 @else
-                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
                 @endif
             </ul>
         </div>
@@ -41,7 +41,7 @@
             @endforeach
         </div>
         <div class="create-forum">
-            <button class="forumbutton" type="button" data-toggle="modal" data-target="#createforum">+ Create Forum</button>
+            <button class="forumbutton" type="button" data-toggle="modal" data-target="#createforum"><i class="bi bi-files"></i> Create Forum</button>
             <div id="createforum" class="modal fade">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
