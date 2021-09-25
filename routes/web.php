@@ -31,6 +31,7 @@ Route::get('/', [HomeScreenController::class, 'displayhomescreen']);
 Route::get('/profile', [UserController::class, 'user_profile']);
 Route::get('/logout', [LoginController::class, 'user_logout']);
 Route::get('/forum/{id}', [HomeScreenController::class, 'threadview']);
+Route::get('/forum/{id}/filter/{tag}', [HomeScreenController::class, 'filter']);
 Route::post('/userregister', [LoginController::class, 'user_register']);
 Route::post('/userlogin', [LoginController::class, 'user_login']);
 Route::post('/createforum', [ForumController::class, 'createforum']);

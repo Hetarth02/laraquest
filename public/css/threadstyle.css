@@ -26,6 +26,26 @@
     margin-top: 1.5rem;
 }
 
+.filter-wrapper button {
+    border: 1px none white;
+    border-radius: 24px;
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    width: 100%;
+    background: none;
+    margin: 0.4rem 1rem 0rem 0rem;
+    text-align: center;
+    color: rgb(45, 160, 0);
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: 0.25s;
+}
+
+.filter-wrapper button:hover {
+    color: black;
+    background-color: #00d4da;
+}
+
 .thread-container{
     width: 95%;
     height: auto;

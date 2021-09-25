@@ -42,10 +42,18 @@
         <div class="create-thread">
             <button class="threadbutton" type="button" data-toggle="modal" data-target="#createthread">+ Create Thread</button>
             <div class="filter-wrapper">
-                <span>Filter question:</span>
-                <button>Unresolved</button>
-                <button>Resolved</button>
-                <button>No Replies</button>
+                <span>Filter by:</span>
+                @if ($isfiltered == true)
+                    <a href="/forum/{{$forum_id}}"><button>Unresolved</button></a>
+                    <a href="/forum/{{$forum_id}}"><button>Resolved</button></a>
+                    <a href="/forum/{{$forum_id}}"><button>No Replies</button></a>
+                    <a href="/forum/{{$forum_id}}">Reset filters</a>                    
+                @else
+                    <a href="../forum/{{$forum_id}}/filter/0"><button>Unresolved</button></a>
+                    <a href="../forum/{{$forum_id}}/filter/1"><button>Resolved</button></a>
+                    <a href="../forum/{{$forum_id}}/filter/2"><button>No Replies</button></a>
+                    <a href="../forum/{{$forum_id}}">Reset filters</a>
+                @endif
             </div>
             <div id="createthread" class="modal fade">
                 <div class="modal-dialog modal-dialog-centered">
