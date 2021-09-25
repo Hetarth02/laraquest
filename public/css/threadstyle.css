@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-start;
+    margin-left: 0.6rem
 }
 
 .flexbox-wrapper {
@@ -11,6 +12,18 @@
     align-items: stretch;
     flex-direction: column;
     flex-wrap: nowrap;
+}
+
+.flexbox-wrapper a:hover {
+    text-decoration: none;
+}
+
+.filter-wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    margin-top: 1.5rem;
 }
 
 .thread-container{
@@ -27,6 +40,10 @@
 
 .thread-container p {
     font-size: 1rem;
+}
+
+.thread-container:hover {
+    box-shadow: 10px 10px 2px rgba(111, 238, 7, 0.6);
 }
 
 .threadbutton {
