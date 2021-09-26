@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Forums</title>
+    <title>About</title>
     <link rel="stylesheet" href="{{ URL::asset('css/base.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/aboutstyle.css') }}" />
 </head>
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
-        <a class="navbar-brand" href="/">Laraquest</a>
+        <a class="navbar-brand" href="/"><i class="fas fa-paper-plane"></i> Laraquest</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,21 +28,44 @@
         </div>
     </nav>
 
-    <div class="flexbox-container">
-        <div>
+    <div class="wrapper">
+        <div class="card1">
             <h3>What is Laraquest?</h3>
-            <img class="logo" src="{{ URL::asset('images/blue_logo.png') }}">
-            <p>Laraquest is a social support forum platform where users can create forums, threads and reply to different threads. And if they want they could also subscribe to any specific thread to receive daily updates about the thread. It is an Open-Source Project made by Hetarth Shah.</p>
-            <h4>Tech Stack:</h4>
-            <p>
-                Framworks: Laravel
-                Languages: HTML, CSS, JS, PHP
-                External Resources: Bootstrap 4/5, Google Fonts and Icons
-                Database: MySQL
-                Version Control: Git/Github
-            </p>
+            <div class="flexbox-container">
+                <div>
+                    <i class="fas fa-paper-plane logo"></i>
+                </div>
+                <div class="description">
+                    Laraquest is a social support platform where users can create their forums, threads and reply to different threads. And if they want they could also subscribe for daily email updates to any specific thread they like. It is an Open-Source Project made by Hetarth Shah.
+                </div>
+            </div>
+            <div class="tech-stack">
+                <h3>Tech Stack:</h3>
+                <a href="https://laravel.com/" alt="Laravel"><i class="fab fa-laravel laravel"></i></a>
+                <a href="https://www.postgresql.org/"><i class="fab fa-deskpro sql"></i></a>
+                <i class="fab fa-html5 html5"></i>
+                <i class="fab fa-css3 css3"></i>
+                <i class="fab fa-js-square js"></i>
+                <i class="fab fa-php php"></i>
+                <a href="https://getbootstrap.com/"><i class="fab fa-bootstrap bootstrap"></i></a>
+                <a href="https://fontawesome.com/"><i class="fab fa-font-awesome fontawesome"></i></a>
+                <a href="https://github.com/"><i class="bi bi-github github"></i></a>
+                <br>
+                <a href="https://github.com/Hetarth02/laraquest"><button class="source-code"><i class="bi bi-code-slash"></i>Source Code</button></a>
+            </div>
         </div>
-        <div></div>
+        <div class="card2">
+            <h3>About Me...</h3>
+            <p class="description">
+                Hey there, I am Hetarth Shah creator of Laraquest. I am a python programmer and new to web development. I am a self-taught and have some experience working in Laravel framework, but I am learning my way forward through the web development journey. I am open for collaboratory projects.
+            </p>
+            <h4>Found any <i class="bi bi-bug-fill bug"></i>(Bugs),</h4>
+            <h3>Want to do a project together?</h3>
+            <h3>Connect via</h3>
+            <a href="https://github.com/Hetarth02"><i class="bi bi-github github"></i></a>
+            <a href="https://www.linkedin.com/in/hetarth-shah-1ab392220"><i class="bi bi-linkedin linkedin"></i></a>
+            <a href="https://instagram.com/sophist._.guy"></a><i class="bi bi-instagram instagram"></i>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

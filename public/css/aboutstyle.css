@@ -1,20 +1,95 @@
-.flexbox-container {
+.wrapper, .flexbox-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    align-content: stretch;
+}
+
+.flexbox-container {
+    align-items: center;
+}
+
+.card1, .card2 {
+    color: #aea5f7;
+    margin: 1rem 1rem 1rem 1rem;
+    border-radius: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: #062b2b;
+    transition: ease 500ms;
+}
+
+.description {
+    margin-top: 1rem;
+    font-size: 1.2rem;
 }
 
 .logo {
-    width: 16rem;
-    height: 16rem;
-    /* animation: logorotate ease 4s infinite; */
+    font-size: 10rem;
 }
 
-@keyframes logorotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+.source-code {
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    width: 9rem;
+    background: none;
+    text-align: center;
+    margin-top: 1rem;
+    color: rgb(45, 160, 0);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: 0.25s;
+}
+
+.source-code:hover {
+    color: black;
+    background-color: rgba(127, 255, 212, 0.9);
+}
+
+i {
+    font-size: 2rem;
+    padding: 0rem 0.2rem 0rem 0.2rem;
+}
+
+.bug {
+    font-size: 1.6rem;
+}
+
+.source-code i {
+    font-size: 1.2rem;
+    padding-right: 0.2rem;
+}
+
+.tech-stack {
+    margin-top: 1rem;
+}
+
+.wrapper h3 {
+    color: rgba(245, 245, 245, 0.85);
+}
+
+.laravel, .bug, .card2 h4 {
+    color: rgba(243, 45, 45, 0.98);
+}
+
+.html5 {
+    color: green;
+}
+
+.js {
+    color: goldenrod;
+}
+
+.bootstrap, .css3 {
+    color: #7811f7;
+}
+
+.fontawesome, .sql, .linkedin, .php {
+    color: #00adff;
+}
+
+.github, .instagram {
+    color: whitesmoke;
 }
