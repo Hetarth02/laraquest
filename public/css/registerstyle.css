@@ -3,23 +3,12 @@
     align-items: center;
 }
 
-.logo {
-    width: 16rem;
-    height: 16rem;
-    animation: logorotate ease 4s infinite;
-}
-
-@keyframes logorotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 .flex-item2 {
     flex-grow: 2;
+}
+
+.logo {
+    font-size: 10rem;
 }
 
 .registerform {
@@ -34,6 +23,14 @@
     border-radius: 20px;
     text-align: center;
     color: rgb(0, 255, 242);
+}
+
+.registerform h3 {
+    text-align: center;
+    color: #add8e6;
+    font-weight: normal;
+    margin: 1.2rem;
+    font-size: 2.5rem;
 }
 
 .registerform input[type="text"],
@@ -51,7 +48,7 @@ input[type="password"], input[type="email"] {
 }
 
 .registerform input[type="text"]:hover,
-input[type="password"]:hover, input[type="email"]:hover {
+.registerform input[type="password"]:hover, .registerform input[type="email"]:hover {
     border: 1px solid #8c1bce;
 }
 
@@ -63,7 +60,7 @@ input[type="password"]:hover, input[type="email"]:hover {
     opacity: 0.7;
 }
 
-.registerform button[type="submit"], button[type="reset"] {
+.registerform button[type="submit"], .registerform button[type="reset"] {
     border: 1px solid white;
     border-radius: 24px;
     padding: 0.6rem;
@@ -78,7 +75,7 @@ input[type="password"]:hover, input[type="email"]:hover {
     transition: 0.25s;
 }
 
-.registerform button[type="submit"]:hover, button[type="reset"]:hover {
+.registerform button[type="submit"]:hover, .registerform button[type="reset"]:hover {
     color: whitesmoke;
     background: #651494;
 }
@@ -94,18 +91,9 @@ input[type="password"]:hover, input[type="email"]:hover {
     text-decoration: underline;
 }
 
-.registerform h3 {
-    text-align: center;
-    color: #add8e6;
-    font-weight: normal;
-    margin: 1.2rem;
-    font-size: 2.5rem;
-}
-
 @media all and (max-width: 728px) {
 
     .flexbox-container {
-        display: flex;
         align-items: stretch;
         flex-direction: column;
         flex-wrap: wrap;
@@ -121,7 +109,7 @@ input[type="password"]:hover, input[type="email"]:hover {
     }
 
     .registerform input[type="text"],
-    input[type="password"], input[type="email"] {
+    .registerform input[type="password"], .registerform input[type="email"] {
         padding: 0.5rem;
         width: 70%;
     }

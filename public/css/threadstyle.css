@@ -1,29 +1,24 @@
-.row-container {
+.row-container, .flexbox-wrapper, .filter-wrapper {
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-start;
     margin-left: 0.6rem
 }
 
+.filter-wrapper, .flexbox-wrapper {
+    flex-direction: column;
+    margin: 1.5rem 0rem 0rem 0rem;
+}
+
 .flexbox-wrapper {
-    display: flex;
     width: 80%;
     justify-content: center;
     align-items: stretch;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    margin: 0rem;
 }
 
 .flexbox-wrapper a:hover {
     text-decoration: none;
-}
-
-.filter-wrapper{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    margin-top: 1.5rem;
 }
 
 .filter-wrapper button {
@@ -41,6 +36,11 @@
     transition: 0.25s;
 }
 
+.filter-wrapper button:hover {
+    color: black;
+    background-color: #00d4da;
+}
+
 .filter-wrapper a {
     color: #0fa6d8;
     font-size: 0.9rem;
@@ -50,11 +50,6 @@
 
 .filter-wrapper a:hover {
     text-decoration: underline;
-}
-
-.filter-wrapper button:hover {
-    color: black;
-    background-color: #00d4da;
 }
 
 .thread-container{
@@ -69,12 +64,12 @@
     transition: ease 700ms;
 }
 
-.thread-container p {
-    font-size: 1rem;
-}
-
 .thread-container:hover {
     box-shadow: 10px 10px 2px rgba(111, 238, 7, 0.6);
+}
+
+.thread-container p {
+    font-size: 1rem;
 }
 
 .threadbutton {
