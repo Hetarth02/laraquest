@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
-        <a class="navbar-brand" href="/"><i class="fas fa-paper-plane"></i> Laraquest</a>
+        <a class="navbar-brand" href="/"><i class="fas fa-paper-plane logo-size"></i> Laraquest</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,7 +36,7 @@
                     <i class="fas fa-paper-plane logo"></i>
                 </div>
                 <div class="description">
-                    Laraquest is a social support platform where users can create their forums, threads and reply to different threads. And if they want they could also subscribe for daily email updates to any specific thread they like. It is an Open-Source Project made by Hetarth Shah.
+                    Laraquest is a social support platform where users can create their forums and threads as well as reply to existing threads. Moreover, users can subscribe to their preferred threads to keep up with it by recieving notifications. This entire project is Open-Source and has been put together by Hetarth Shah.
                 </div>
             </div>
             <div class="tech-stack">
@@ -57,14 +57,15 @@
         <div class="card2">
             <h3>About Me...</h3>
             <p class="description">
-                Hey there, I am Hetarth Shah creator of Laraquest. I am a python programmer and new to web development. I am a self-taught and have some experience working in Laravel framework, but I am learning my way forward through the web development journey. I am open for collaboratory projects.
+                Hello,
+                I am Hetarth Shah, the face behind Laraquest. Web development is not my forte, but I can say my skills are novice. My actual ambitions are to be a Python Programmer. I am my own teacher, and have self-taught myself with a certain degree of experience in working with Laravel framework. I am constantly pushing myself out of the comfort zone through this web development journey, seeing how far can I go. Though I usually have multiple projects on hand to further increase my learning; I am open to any collaboratory projects.
             </p>
             <h4>Found any <i class="bi bi-bug-fill bug"></i>(Bugs),</h4>
             <h3>Want to do a project together?</h3>
             <h3>Connect via</h3>
             <a href="https://github.com/Hetarth02"><i class="bi bi-github github"></i></a>
             <a href="https://www.linkedin.com/in/hetarth-shah-1ab392220"><i class="bi bi-linkedin linkedin"></i></a>
-            <a href="https://instagram.com/sophist._.guy"></a><i class="bi bi-instagram instagram"></i>
+            <a href="https://instagram.com/sophist._.guy"><i class="bi bi-instagram instagram"></i></a>
         </div>
     </div>
 

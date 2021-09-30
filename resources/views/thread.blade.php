@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
-        <a class="navbar-brand" href="/"><i class="fas fa-paper-plane"></i> Laraquest</a>
+        <a class="navbar-brand" href="/"><i class="fas fa-paper-plane logo-size"></i> Laraquest</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>

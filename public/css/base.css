@@ -42,3 +42,7 @@ body {
 .menu a:hover{
     font-weight: bold;
 }
+
+.logo-size {
+    font-size: 1.3rem;
+}

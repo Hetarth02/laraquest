@@ -11,7 +11,7 @@
 
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
-        <a class="navbar-brand" href="/"><i class="fas fa-paper-plane"></i> Laraquest</a>
+        <a class="navbar-brand" href="/"><i class="fas fa-paper-plane logo-size"></i> Laraquest</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,7 +25,7 @@
     
     <form class="loginform" action="/userlogin" method="POST">
         @csrf
-        <h3><i class="fas fa-feather-alt"></i>Login</h3>
+        <h3><i class="fas fa-feather-alt logo-feather"></i>Login</h3>
         <div class="flexbox-container">
             <div class="flex-item1">
                 <i class="fas fa-paper-plane logo"></i>

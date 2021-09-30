@@ -6,7 +6,15 @@
 }
 
 .logo {
+    margin-left: 1.2rem;
+    margin-bottom: 3.5rem;
+    color: #aea5f7;
     font-size: 10rem;
+}
+
+.logo-feather {
+    color: #46a438;
+    font-size: 2.5rem;
 }
 
 .flex-item2 {
@@ -169,8 +177,7 @@
     }
 
     .logo {
-        width: 8rem;
-        height: 8rem;
+        font-size: 8rem;
     }
 
     .loginform {
