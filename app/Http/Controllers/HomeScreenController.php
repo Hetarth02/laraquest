@@ -25,4 +25,13 @@ class HomeScreenController extends Controller
         $forum_name = DB::select('select forum_name from forums where forum_id = ?', [$id]);
         return view('thread')->with('thread', $thread)->with('forum_id', $id)->with('forum_name', $forum_name[0]->forum_name)->with('isfiltered', true);
     }
+
+    public function qaview($forum_id, $thread_id)
+    {
+        $forum_name = DB::select('select forum_name from forums where forum_id = ?', [$forum_id]);
+        // $thread_username = DB::select('select username from threads where forum_id = ? and thread_id = ?', [$forum_id, $thread_id]);
+        $thread = DB::select('select username, thread_description from threads where forum_id = ? and thread_id = ?', [$forum_id, $thread_id]);
+        $replies = DB::select('select thread_replies, username from replies where thread_id = ? order by timestamp desc', [$thread_id]);
+        return view('qaview')->with('forum_name', $forum_name[0]->forum_name)->with('thread', $thread)->with('replies', $replies)->with('thread_id', $thread_id);
+    }
 }

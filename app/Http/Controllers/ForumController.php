@@ -46,7 +46,6 @@ class ForumController extends Controller
             return redirect('/login')->with('alert', 'Please login to ask a question.');
         } else {
             $input = $request->all();
-            // $id = $request->session()->get('forum_id');
             //Validation
             $validator = Validator::make($input, [
                 'thread_description' => 'required',
@@ -61,6 +60,33 @@ class ForumController extends Controller
                 $timestamp = new DateTime();
                 try {
                     DB::insert('insert into threads (forum_id, forum_name, thread_description, username, timestamp) values (?, ?, ?, ?, ?)', [$id, $forum_name, $forum_description, $username, $timestamp]);
+                } catch (Exception $error) {
+                    return redirect()->back()->with('alert', 'Something went wrong.');
+                }
+                return redirect()->back();
+            }
+        }
+    }
+
+    public function createreply(Request $request, $id)
+    {
+        //If user is logged in then only create a forum
+        if (empty(Auth::user()->username)) {
+            return redirect('/login')->with('alert', 'Please login to reply.');
+        } else {
+            $input = $request->all();
+            //Validation
+            $validator = Validator::make($input, [
+                'thread_replies' => 'required',
+            ]);
+            if ($validator->fails()) {
+                return redirect()->back()->with('alert', 'Thread replies cannot be empty.');
+            } else {
+                $username = Auth::user()->username;
+                $thread_replies = $input['thread_replies'];
+                $timestamp = new DateTime();
+                try {
+                    DB::insert('insert into replies (thread_id, thread_replies, username, timestamp) values (?, ?, ?, ?)', [$id, $thread_replies, $username, $timestamp]);
                 } catch (Exception $error) {
                     return redirect()->back()->with('alert', 'Something went wrong.');
                 }
