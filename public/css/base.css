@@ -36,7 +36,11 @@ body {
 
 .menu a{
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+}
+
+.menu i {
+    font-size: 1.45rem;
 }
 
 .menu a:hover{

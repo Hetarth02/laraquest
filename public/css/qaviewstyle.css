@@ -58,44 +58,32 @@
     color: #000000;
     overflow-x: auto;
     margin: 0rem 1rem 1rem 0rem;
-    border-radius: 1rem;
-    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem 0rem 1rem;
     background-color: #ffffffbf;
     transition: ease 700ms;
-}
-
-.thread-container:hover {
-    box-shadow: 10px 10px 2px rgba(111, 238, 7, 0.6);
 }
 
 .thread-container p {
     font-size: 1rem;
 }
 
-.threadbutton {
-    border: 1px none white;
-    border-radius: 24px;
-    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
-    width: 100%;
-    background: none;
-    margin: 0.4rem 1rem 0rem 0rem;
-    text-align: center;
-    color: rgb(45, 160, 0);
-    font-size: 1rem;
-    cursor: pointer;
-    outline: none;
-    transition: 0.25s;
-}
-
-.threadbutton:hover {
-    color: black;
-    background-color: rgba(127, 255, 212, 0.9);
+.thread-container a {
+    color: #1c0cac;
 }
 
 .reply {
-    width: 15%;
+    border: 1px none white;
+    border-radius: 24px;
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    width: 20%;
+    background: none;
+    text-align: center;
+    color: rgb(8, 6, 102);
     font-size: 1.1rem;
-    color: #c02222;
+    cursor: pointer;
+    outline: none;
+    transition: 0.25s;
 }
 
 .reply:hover {
