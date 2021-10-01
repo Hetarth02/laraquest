@@ -21,6 +21,31 @@
     text-decoration: none;
 }
 
+.inline-flex-row {
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.inline-flex-col {
+    display: inline-flex;
+    width: 100%;
+    overflow-wrap: anywhere;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.bookmark {
+    font-size: 1.7rem;
+    color: black;
+}
+
+.reply {
+    color: #000000;
+}
+
 .filter-wrapper button {
     border: 1px none white;
     border-radius: 24px;
@@ -65,6 +90,7 @@
 }
 
 .thread-container p {
+    padding-top: 0.2rem;
     font-size: 1rem;
 }
 

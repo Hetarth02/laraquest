@@ -6,6 +6,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scrollbar-width: none; /* To Hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* To Hide scrollbar in IE v10+ */
+}
+
+*::-webkit-scrollbar {
+    /* To Hide scrollbar with webkit support */
+    width: 0;
+    height: 0;
 }
 
 html,

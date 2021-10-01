@@ -32,14 +32,18 @@
         <div class="flexbox-wrapper">
             @foreach ($thread as $thread)
                 <div class="thread-container">
-                    <p>{{$thread->thread_description}}</p>
-                    <p>Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread->timestamp))->diffForHumans()}}</p>
-                    @if ($bookmarked == true)
-                        <a href="/{{$forum_name}}/remove_bookmark/{{$thread->thread_id}}"><button class="reply"><i class="bi bi-bookmark-heart-fill"></i></button></a>
-                    @else
-                        <a href="/{{$forum_name}}/bookmark/{{$thread->thread_id}}"><button class="reply"><i class="bi bi-bookmark"></i></button></a>
-                    @endif
-                    <p><a href="profile/{{$thread->username}}"><i class="bi bi-person-fill"></i> {{$thread->username}}</a></p>
+                    <div class="inline-flex-row">
+                        <div class="inline-flex-col">
+                            <p>{{$thread->thread_description}}</p>
+                            <p>Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread->timestamp))->diffForHumans()}}</p>
+                            <p><a href="profile/{{$thread->username}}"><i class="bi bi-person-fill"></i> {{$thread->username}}</a></p>
+                        </div>
+                        @if ($bookmarked == true)
+                            <a href="/{{$forum_name}}/remove_bookmark/{{$thread->thread_id}}"><button class="reply"><i class="bi bi-bookmark-heart-fill bookmark"></i></button></a>
+                        @else
+                            <a href="/{{$forum_name}}/bookmark/{{$thread->thread_id}}"><button class="reply"><i class="bi bi-bookmark bookmark"></i></button></a>
+                        @endif
+                    </div>
                     <button class="reply" type="button" data-toggle="modal" data-target="#createreply"><i class="bi bi-reply-fill"></i> Reply</button>
                 </div>
             @endforeach
@@ -49,7 +53,7 @@
                     <p>{{$replies->thread_replies}}</p>
                     <p>Posted: {{Carbon\Carbon::createFromTimestamp(strtotime($replies->timestamp))->diffForHumans()}}</p>
                     <p><a href="profile/{{$replies->username}}"><i class="bi bi-person-fill"></i> {{$replies->username}}</a></p>
-                    <button class="reply" type="button" data-toggle="modal" data-target="#createreply"><i class="bi bi-reply-fill"></i> Reply</button>
+                    <button class="reply" type="button" data-toggle="modal" data-target="#createreply"><i class="bi bi-reply-fill reply"></i> Reply</button>
                 </div>
             @endforeach
         </div>

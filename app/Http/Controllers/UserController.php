@@ -57,13 +57,25 @@ class UserController extends Controller
                 unset($user_subs[$key]);
             }
             $user_subs = array_values($user_subs);
-            $subs = json_encode($user_subs);
-            try {
-                DB::insert('update users set user_subs = ? where username = ?', [$subs, $username]);
-            } catch (Exception $error) {
-                return redirect()->back()->with('alert', 'Something went wrong.');
+            if (count($user_subs) == 1) {
+                $user_subs = [];
             }
-            return redirect()->back();
+            if (empty($user_subs)) {
+                try {
+                    DB::insert('update users set user_subs = "[]" where username = ?', [$username]);
+                } catch (Exception $error) {
+                    return redirect()->back()->with('alert', 'Something went wrong.');
+                }
+                return redirect()->back();
+            } else {
+                $subs = json_encode($user_subs);
+                try {
+                    DB::insert('update users set user_subs = ? where username = ?', [$subs, $username]);
+                } catch (Exception $error) {
+                    return redirect()->back()->with('alert', 'Something went wrong.');
+                }
+                return redirect()->back();
+            }
         }
     }
 }
