@@ -34,11 +34,11 @@
                 <div class="thread-container">
                     <p>{{$thread->thread_description}}</p>
                     <p>Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread->timestamp))->diffForHumans()}}</p>
-                    {{-- @if ($sub == true) --}}
-                        <a href="unsub"><button class="reply"><i class="bi bi-bookmark-heart-fill"></i></button></a>
-                    {{-- @else --}}
-                        <a href="sub"><button class="reply"><i class="bi bi-bookmark"></i></button></a>
-                    {{-- @endif --}}
+                    @if ($bookmarked == true)
+                        <a href="/{{$forum_name}}/remove_bookmark/{{$thread->thread_id}}"><button class="reply"><i class="bi bi-bookmark-heart-fill"></i></button></a>
+                    @else
+                        <a href="/{{$forum_name}}/bookmark/{{$thread->thread_id}}"><button class="reply"><i class="bi bi-bookmark"></i></button></a>
+                    @endif
                     <p><a href="profile/{{$thread->username}}"><i class="bi bi-person-fill"></i> {{$thread->username}}</a></p>
                     <button class="reply" type="button" data-toggle="modal" data-target="#createreply"><i class="bi bi-reply-fill"></i> Reply</button>
                 </div>

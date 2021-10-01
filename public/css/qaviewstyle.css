@@ -90,6 +90,10 @@
     background-color: transparent;
 }
 
+.reply:focus {
+    outline: none;
+}
+
 .threadform {
     width: 35rem;
     padding: 1.5rem;

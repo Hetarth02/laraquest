@@ -10,7 +10,8 @@ use Illuminate\Support\Str;
 
 class MailController extends Controller
 {
-    public function sub_mail(Request $request) {
+    public function sub_mail(Request $request)
+    {
         require base_path("vendor/autoload.php");
         $mail = new PHPMailer(true);
 
@@ -61,7 +62,8 @@ class MailController extends Controller
         }
     }
 
-    public function forgotpassword(Request $request) {
+    public function forgotpassword(Request $request)
+    {
         require base_path("vendor/autoload.php");
         $mail = new PHPMailer(true);
 

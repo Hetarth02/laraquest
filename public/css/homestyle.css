@@ -61,13 +61,16 @@
     color: rgb(45, 160, 0);
     font-size: 1rem;
     cursor: pointer;
-    outline: none;
     transition: 0.25s;
 }
 
 .forumbutton:hover {
     color: black;
     background-color: rgba(127, 255, 212, 0.9);
+}
+
+.forumbutton:focus {
+    outline: none;
 }
 
 .forumform {

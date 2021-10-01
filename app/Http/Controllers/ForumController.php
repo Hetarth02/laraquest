@@ -41,7 +41,7 @@ class ForumController extends Controller
 
     public function createthread(Request $request, $id)
     {
-        //If user is logged in then only create a forum
+        //If user is logged in then only create a thread
         if (empty(Auth::user()->username)) {
             return redirect('/login')->with('alert', 'Please login to ask a question.');
         } else {
@@ -70,7 +70,7 @@ class ForumController extends Controller
 
     public function createreply(Request $request, $id)
     {
-        //If user is logged in then only create a forum
+        //If user is logged in then only let user reply
         if (empty(Auth::user()->username)) {
             return redirect('/login')->with('alert', 'Please login to reply.');
         } else {
