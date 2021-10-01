@@ -34,6 +34,7 @@
                 <a href="../{{$thread->forum_id}}/{{$thread->thread_id}}">
                     <div class="thread-container">
                         <p>{{$thread->thread_description}}</p>
+                        <p>Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread->timestamp))->diffForHumans()}}</p>
                         <p><i class="bi bi-person-fill"></i> {{$thread->username}}</p>
                     </div>
                 </a>

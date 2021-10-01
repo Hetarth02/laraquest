@@ -33,6 +33,12 @@
             @foreach ($thread as $thread)
                 <div class="thread-container">
                     <p>{{$thread->thread_description}}</p>
+                    <p>Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread->timestamp))->diffForHumans()}}</p>
+                    {{-- @if ($sub == true) --}}
+                        <a href="unsub"><button class="reply"><i class="bi bi-bookmark-heart-fill"></i></button></a>
+                    {{-- @else --}}
+                        <a href="sub"><button class="reply"><i class="bi bi-bookmark"></i></button></a>
+                    {{-- @endif --}}
                     <p><a href="profile/{{$thread->username}}"><i class="bi bi-person-fill"></i> {{$thread->username}}</a></p>
                     <button class="reply" type="button" data-toggle="modal" data-target="#createreply"><i class="bi bi-reply-fill"></i> Reply</button>
                 </div>
@@ -41,6 +47,7 @@
             @foreach ($replies as $replies)
                 <div class="thread-container">
                     <p>{{$replies->thread_replies}}</p>
+                    <p>Posted: {{Carbon\Carbon::createFromTimestamp(strtotime($replies->timestamp))->diffForHumans()}}</p>
                     <p><a href="profile/{{$replies->username}}"><i class="bi bi-person-fill"></i> {{$replies->username}}</a></p>
                     <button class="reply" type="button" data-toggle="modal" data-target="#createreply"><i class="bi bi-reply-fill"></i> Reply</button>
                 </div>
@@ -49,14 +56,14 @@
         <div class="create-thread">
             <div class="filter-wrapper">
                 <span><i class="bi bi-calendar4-range"></i> Date Added:</span>
-                {{-- @if ($isfiltered == true) --}}
-                    <a href="/forum/{{$forum_name}}"><button><i class="bi bi-calendar3-week"></i> Latest</button></a>
-                    <a href="/forum/{{$forum_name}}"><button><i class="bi bi-calendar3"></i> Earliest</button></a>
-                    <a href="/forum/{{$forum_name}}"><i class="bi bi-bootstrap-reboot"></i> Reset filters</a>
-                {{-- @else --}}
-                    <a href="../forum/{{$forum_name}}"><button><i class="bi bi-calendar3-week"></i> Latest</button></a>
-                    <a href="../forum/{{$forum_name}}"><button><i class="bi bi-calendar3"></i> Earliest</button></a>
-                {{-- @endif --}}
+                @if ($sort == true)
+                    <a href="/{{$forum_id}}/{{$thread_id}}"><button><i class="bi bi-calendar3-week"></i> Latest</button></a>
+                    <a href="/{{$forum_id}}/{{$thread_id}}/sort"><button><i class="bi bi-calendar3"></i> Earliest</button></a>
+                    <a href="/{{$forum_id}}/{{$thread_id}}"><i class="bi bi-bootstrap-reboot"></i> Reset filters</a>
+                @else
+                    <a href="/{{$forum_id}}/{{$thread_id}}"><button><i class="bi bi-calendar3-week"></i> Latest</button></a>
+                    <a href="/{{$forum_id}}/{{$thread_id}}/sort"><button><i class="bi bi-calendar3"></i> Earliest</button></a>
+                @endif
             </div>
             <div id="createreply" class="modal fade">
                 <div class="modal-dialog modal-dialog-centered">

@@ -18,4 +18,14 @@ class UserController extends Controller
             return view('profile')->with('user_data', $user_data);
         }
     }
+
+    public function sub()
+    {
+        # code...
+    }
+
+    public function unsub()
+    {
+        # code...
+    }
 }

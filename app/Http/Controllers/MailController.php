@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 
 class MailController extends Controller
 {
-    public function subscribe(Request $request) {
+    public function sub_mail(Request $request) {
         require base_path("vendor/autoload.php");
         $mail = new PHPMailer(true);
 
