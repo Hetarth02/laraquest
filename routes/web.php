@@ -31,7 +31,8 @@ Route::get('/about', function () {
 
 //Functional Routes
 Route::get('/', [HomeScreenController::class, 'displayhomescreen']);
-Route::get('/profile', [UserController::class, 'user_profile']);
+Route::get('/profile', [UserController::class, 'profile']);
+Route::get('/profile/{username}', [UserController::class, 'user_profile']);
 Route::get('/logout', [LoginController::class, 'user_logout']);
 Route::get('/forum/{id}', [HomeScreenController::class, 'threadview']);
 Route::get('/forum/{id}/filter/{tag}', [HomeScreenController::class, 'filter']);

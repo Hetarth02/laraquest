@@ -42,10 +42,6 @@
     color: black;
 }
 
-.reply {
-    color: #000000;
-}
-
 .filter-wrapper button {
     border: 1px none white;
     border-radius: 24px;
@@ -108,8 +104,6 @@
     color: rgb(8, 6, 102);
     font-size: 1.1rem;
     cursor: pointer;
-    outline: none;
-    transition: 0.25s;
 }
 
 .reply:hover {

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Profile</title>
     <link rel="stylesheet" href="{{ URL::asset('css/base.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/profilestyle.css') }}" />
 </head>
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
@@ -26,6 +27,46 @@
             </ul>
         </div>
     </nav>
+
+    <div class="flex-row-container">
+        <div class="content-container">
+            <div class="outerbox">
+                <div class="col-wrapper">
+                    @foreach ($data as $data)
+                        <img src="https://avatars.dicebear.com/api/bottts/12345678.svg" alt="Profile Pic">
+                        <div class="flex-col-container">
+                            <h3>{{$data->username}}</h3>
+                            <h4>{{$data->name}}</h4>
+                            <div class="inline-row-container">
+                                <p><i class="bi bi-envelope-fill"></i> {{$data->email}}</p>
+                                <p><i class="bi bi-shield-lock-fill"></i> {{$data->password_values}}</p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="content-container">
+            <div class="outerbox outerbox2">
+                @if ($thread_data == false)
+                    <div class="nobookmarks">
+                        <p>No Bookmarks</p>
+                    </div>
+                @else
+                    @foreach ($thread_data as $thread)
+                    <a href="../{{$thread[0]->forum_id}}/{{$thread[0]->thread_id}}">
+                        <div class="thread-container">
+                            <p>{{$thread[0]->thread_description}}</p>
+                            <p>Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread[0]->timestamp))->diffForHumans()}}</p>
+                            {{-- <p><i class="bi bi-person-fill"></i> {{$thread->username}}</p> --}}
+                        </div>
+                    </a>
+                    @endforeach
+                @endif
+            </div>
+        </div>
+    </div>
 
     <script>
         var msg = '{{Session::get('alert')}}';

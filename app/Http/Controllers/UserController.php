@@ -9,15 +9,33 @@ use Exception;
 
 class UserController extends Controller
 {
-    public function user_profile(Request $request)
+    public function profile()
     {
         if (empty(Auth::user()->username)) {
             return redirect('/login');
         } else {
             $username = Auth::user()->username;
-            $user_data = DB::select('select * from users where username = ?', [$username]);
-            return view('profile')->with('user_data', $user_data);
+            $data = DB::select('select name, email, username, password_values, user_subs from users where username = ?', [$username]);
+            $thread = json_decode($data[0]->user_subs, true);
+            if (empty($thread)) {
+                return view('profile')->with('data', $data)->with('thread_data', false);
+            } else {
+                $thread_data = [];
+                foreach ($thread as $thread) {
+                    array_push($thread_data, DB::select('select * from threads where thread_id = ?', [$thread]));
+                }
+                return view('profile')->with('data', $data)->with('thread_data', $thread_data);
+            }
         }
+    }
+
+    public function user_profile($username)
+    {
+        if ($username == (Auth::user()->username)) {
+            return redirect('/profile');
+        }
+        $user_data = DB::select('select * from users where username = ?', [$username]);
+        return view('userprofile')->with('user_data', $user_data);
     }
 
     public function bookmark(Request $request, $forum_id, $thread_id)
@@ -28,8 +46,7 @@ class UserController extends Controller
         } else {
             $username = Auth::user()->username;
             $user_subs = DB::select('select user_subs from users where username = ?', [$username]);
-            $user_subs = $user_subs[0]->user_subs;
-            $user_subs = json_decode($user_subs, true);
+            $user_subs = json_decode($user_subs[0]->user_subs, true);
             array_push($user_subs, (int)$thread_id);
             $user_subs = array_unique($user_subs);
             $subs = json_encode($user_subs);
@@ -50,8 +67,7 @@ class UserController extends Controller
         } else {
             $username = Auth::user()->username;
             $user_subs = DB::select('select user_subs from users where username = ?', [$username]);
-            $user_subs = $user_subs[0]->user_subs;
-            $user_subs = json_decode($user_subs, true);
+            $user_subs = json_decode($user_subs[0]->user_subs, true);
             $key = array_search((int)$thread_id, $user_subs);
             if (!empty($key)) {
                 unset($user_subs[$key]);
