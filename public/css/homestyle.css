@@ -103,11 +103,7 @@
     font-size: 1.5rem;
 }
 
-.forumform option {
-    color: #063535;
-}
-
-.description {
+.description, .forumtext {
     border: 1px solid white;
     border-radius: 14px;
     padding: 11px 10px;
@@ -116,17 +112,17 @@
     background: none;
     margin: 1rem auto;
     resize: none;
-    text-align: center;
+    text-align: start;
     color: whitesmoke;
     font-weight: bold;
 }
 
-.description:hover {
+.description:hover, .forumtext:hover {
     border: 1px solid #46a438;
 }
 
 ::placeholder {
-    text-align: center;
+    text-align: start;
     font-size: 1rem;
     color: #e3ffc1;
     font-weight: normal;

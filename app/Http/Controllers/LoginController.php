@@ -30,10 +30,12 @@ class LoginController extends Controller
             $username = $input['username'];
             $password_value = $input['password'];
             $password = bcrypt($password_value);
+            $random_seed = rand(10000000, 99999999);
+            $profile_pic = "https://avatars.dicebear.com/api/bottts/".$random_seed.".svg";
 
             try {
                 //Insert in DB if everything is valid and redirect to login page
-                DB::insert('insert into users (name,email,username,password,password_values) values (?,?,?,?,?)', [$name,$email,$username,$password,$password_value]);
+                DB::insert('insert into users (name,email,username,password,password_values,profile_pic) values (?,?,?,?,?,?)', [$name,$email,$username,$password,$password_value,$profile_pic]);
                 return redirect('/login');
             } catch (Exception $error) {
                 return redirect()->back()->with('alert', 'Something went wrong, Please try again.');

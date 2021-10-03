@@ -116,7 +116,7 @@
     background: none;
     margin: 1rem auto;
     resize: none;
-    text-align: center;
+    text-align: start;
     color: whitesmoke;
     font-weight: bold;
 }
@@ -126,7 +126,7 @@
 }
 
 ::placeholder {
-    text-align: center;
+    text-align: start;
     font-size: 1rem;
     color: #e3ffc1;
     font-weight: normal;

@@ -37,10 +37,6 @@
                         <div class="flex-col-container">
                             <h3>{{$data->username}}</h3>
                             <h4>{{$data->name}}</h4>
-                            <div class="inline-row-container">
-                                <p><i class="bi bi-envelope-fill"></i> {{$data->email}}</p>
-                                <p><i class="bi bi-shield-lock-fill"></i> {{$data->password_values}}</p>
-                            </div>
                         </div>
                     @endforeach
                 </div>
@@ -59,7 +55,6 @@
                         <div class="thread-container">
                             <p>{{$thread[0]->thread_description}}</p>
                             <p>Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread[0]->timestamp))->diffForHumans()}}</p>
-                            {{-- <p><i class="bi bi-person-fill"></i> {{$thread->username}}</p> --}}
                         </div>
                     </a>
                     @endforeach

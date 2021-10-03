@@ -50,13 +50,7 @@
                                 @csrf
                                 <h3>Create a Forum</h3>
                                 <div>
-                                    <select class="forumlist" name="dropdown">
-                                        <option value="C">C</option>
-                                        <option value="C#">C#</option>
-                                        <option value="C++">C++</option>
-                                        <option value="Go">Go</option>
-                                        <option value="Ruby">Ruby</option>
-                                    </select>
+                                    <input class="forumtext" name="forum_name" placeholder="Forum Title" type="text">
                                     <textarea
                                         id="textarea"
                                         class="description"

@@ -15,7 +15,7 @@ class UserController extends Controller
             return redirect('/login');
         } else {
             $username = Auth::user()->username;
-            $data = DB::select('select name, email, username, password_values, user_subs from users where username = ?', [$username]);
+            $data = DB::select('select name, email, username, password_values, user_subs, profile_pic from users where username = ?', [$username]);
             $thread = json_decode($data[0]->user_subs, true);
             if (empty($thread)) {
                 return view('profile')->with('data', $data)->with('thread_data', false);
@@ -34,8 +34,17 @@ class UserController extends Controller
         if ($username == (Auth::user()->username)) {
             return redirect('/profile');
         }
-        $user_data = DB::select('select * from users where username = ?', [$username]);
-        return view('userprofile')->with('user_data', $user_data);
+        $data = DB::select('select name, username, user_subs, profile_pic from users where username = ?', [$username]);
+        $thread = json_decode($data[0]->user_subs, true);
+        if (empty($thread)) {
+            return view('profile')->with('data', $data)->with('thread_data', false);
+        } else {
+            $thread_data = [];
+            foreach ($thread as $thread) {
+                array_push($thread_data, DB::select('select * from threads where thread_id = ?', [$thread]));
+            }
+            return view('userprofile')->with('data', $data)->with('thread_data', $thread_data);
+        }
     }
 
     public function bookmark(Request $request, $forum_id, $thread_id)
