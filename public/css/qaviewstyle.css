@@ -114,6 +114,10 @@
     outline: none;
 }
 
+.resolved {
+    padding-left: 40%;
+}
+
 .threadform {
     width: 35rem;
     padding: 1.5rem;

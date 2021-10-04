@@ -103,4 +103,42 @@ class UserController extends Controller
             }
         }
     }
+
+    public function resolved($forum_name, $thread_id)
+    {
+        if (empty(Auth::user()->username)) {
+            return redirect('/login')->with('alert', 'Please login');
+        } else {
+            $username = DB::select('select username from threads where thread_id = ?', [$thread_id]);
+            $username = $username[0]->username;
+            if ($username == (Auth::user()->username)) {
+                try {
+                    DB::insert('update threads set tag = 1 where thread_id = ?', [$thread_id]);
+                } catch (Exception $error) {
+                    return redirect()->back()->with('alert', 'Something went wrong.');
+                }
+                return redirect()->back();
+            }
+            return redirect()->back()->with('alert', 'You cannot perform this action.');
+        }
+    }
+
+    public function unresolved($forum_name, $thread_id)
+    {
+        if (empty(Auth::user()->username)) {
+            return redirect('/login')->with('alert', 'Please login');
+        } else {
+            $username = DB::select('select username from threads where thread_id = ?', [$thread_id]);
+            $username = $username[0]->username;
+            if ($username == (Auth::user()->username)) {
+                try {
+                    DB::insert('update threads set tag = 0 where thread_id = ?', [$thread_id]);
+                } catch (Exception $error) {
+                    return redirect()->back()->with('alert', 'Something went wrong.');
+                }
+                return redirect()->back();
+            }
+            return redirect()->back()->with('alert', 'You cannot perform this action.');
+        }
+    }
 }

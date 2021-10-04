@@ -30,15 +30,27 @@
 
     <div class="row-container">
         <div class="flexbox-wrapper">
-            @foreach ($thread as $thread)
-                <a href="../{{$thread->forum_id}}/{{$thread->thread_id}}">
+            @if ($isfiltered == true and $tag == 2)
+                @foreach ($thread as $thread)
+                <a href="/{{$thread[0]->forum_id}}/{{$thread[0]->thread_id}}">
+                    <div class="thread-container">
+                        <p>{{$thread[0]->thread_description}}</p>
+                        <p>Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread[0]->timestamp))->diffForHumans()}}</p>
+                        <p><i class="bi bi-person-fill"></i> {{$thread[0]->username}}</p>
+                    </div>
+                </a>
+                @endforeach
+            @else
+                @foreach ($thread as $thread)
+                <a href="/{{$thread->forum_id}}/{{$thread->thread_id}}">
                     <div class="thread-container">
                         <p>{{$thread->thread_description}}</p>
                         <p>Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread->timestamp))->diffForHumans()}}</p>
                         <p><i class="bi bi-person-fill"></i> {{$thread->username}}</p>
                     </div>
                 </a>
-            @endforeach
+                @endforeach
+            @endif
         </div>
         <div class="create-thread">
             <button class="threadbutton" type="button" data-toggle="modal" data-target="#createthread"><i class="bi bi-file-text"></i> Create Thread</button>

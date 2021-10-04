@@ -45,6 +45,11 @@
                         @endif
                     </div>
                     <button class="reply" type="button" data-toggle="modal" data-target="#createreply"><i class="bi bi-reply-fill"></i> Reply</button>
+                    @if ($thread->tag == 1)
+                        <a href="/{{$forum_name}}/unresolved/{{$thread->thread_id}}"><button class="reply resolved" type="button"><i class="bi bi-award-fill"></i> Resolved</button></a>
+                    @else
+                        <a href="/{{$forum_name}}/resolved/{{$thread->thread_id}}"><button class="reply resolved" type="button"><i class="bi bi-award"></i> Resolved</button></a>
+                    @endif
                 </div>
             @endforeach
             <h3>Answers</h3>

@@ -55,6 +55,7 @@
 .thread-container{
     width: 95%;
     height: auto;
+    overflow-wrap: anywhere;
     color: #000000;
     overflow-x: auto;
     margin: 0rem 1rem 1rem 0rem;
