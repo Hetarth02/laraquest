@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateThreadsTable extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('threads', function(Blueprint $table)
+		{
+			$table->integer('thread_id', true);
+			$table->integer('forum_id');
+			$table->string('forum_name');
+			$table->string('thread_description');
+			$table->integer('tag')->default(0);
+			$table->string('username');
+			$table->dateTime('timestamp');
+		});
+	}
+
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::drop('threads');
+	}
+
+}
