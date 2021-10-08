@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeScreenController extends Controller
 {
-    public function displayhomescreen()
+    public function display_home_screen()
     {
         $forum = DB::select('select * from forums order by timestamp desc');
         return view('home')->with('forum', $forum);
     }
 
-    public function threadview($id)
+    public function thread_view($id)
     {
         $thread = DB::select('select * from threads where forum_id = ? order by timestamp desc', [$id]);
         $forum_name = DB::select('select forum_name from forums where forum_id = ?', [$id]);

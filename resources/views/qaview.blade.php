@@ -78,7 +78,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div>
-                            <form id="replyform" class="threadform" action="../{{$thread_id}}/createreply" method="POST">
+                            <form id="replyform" class="threadform" action="/{{$forum_id}}/{{$thread_id}}/createreply" method="POST">
                                 @csrf
                                 <h3>Add a new Reply</h3>
                                 <div>

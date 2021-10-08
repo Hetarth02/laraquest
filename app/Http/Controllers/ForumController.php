@@ -11,7 +11,7 @@ use Exception;
 
 class ForumController extends Controller
 {
-    public function createforum(Request $request)
+    public function create_forum(Request $request)
     {
         //If user is logged in then only create a forum
         if (empty(Auth::user()->username)) {
@@ -39,7 +39,7 @@ class ForumController extends Controller
         }
     }
 
-    public function createthread(Request $request, $id)
+    public function create_thread(Request $request, $id)
     {
         //If user is logged in then only create a thread
         if (empty(Auth::user()->username)) {
@@ -68,7 +68,7 @@ class ForumController extends Controller
         }
     }
 
-    public function createreply(Request $request, $forum_id, $id)
+    public function create_reply(Request $request, $forum_id, $id)
     {
         //If user is logged in then only let user reply
         if (empty(Auth::user()->username)) {
@@ -82,7 +82,7 @@ class ForumController extends Controller
             if ($validator->fails()) {
                 return redirect()->back()->with('alert', 'Thread replies cannot be empty.');
             } else {
-                $forum_name = DB::select('select forum_name from forums where forum_id = ?', [$id]);
+                $forum_name = DB::select('select forum_name from forums where forum_id = ?', [$forum_id]);
                 $forum_name = $forum_name[0]->forum_name;
                 $username = Auth::user()->username;
                 $thread_replies = $input['thread_replies'];
