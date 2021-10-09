@@ -30,6 +30,7 @@ class LoginController extends Controller
             $username = $input['username'];
             $password_value = $input['password'];
             $password = bcrypt($password_value);
+            //Generating random profile image for user
             $random_seed = rand(10000000, 99999999);
             $profile_pic = "https://avatars.dicebear.com/api/bottts/".$random_seed.".svg";
 
@@ -58,7 +59,7 @@ class LoginController extends Controller
             $username = $input['username'];
             $password = $input['password'];
 
-            //Authenciating
+            //Authenciate user credentials
             $data = array(
                 'username' => $username,
                 'password' => $password
