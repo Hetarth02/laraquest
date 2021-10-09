@@ -10,74 +10,160 @@
 </head>
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
-        <a class="navbar-brand" href="/"><i class="fas fa-paper-plane logo-size"></i> Laraquest</a>
+        <a class="navbar-brand" href="/">
+            <i class="fas fa-paper-plane logo-size"></i> Laraquest
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="/"><i class="bi bi-files"></i> Forums</a></li>
-                <li class="nav-item"><a class="nav-link" href="/profile"><i class="bi bi-people-fill"></i> Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about"><i class="bi bi-info-circle"></i> About</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="bi bi-files"></i> Forums
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">
+                        <i class="bi bi-people-fill"></i> Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">
+                        <i class="bi bi-info-circle"></i> About
+                    </a>
+                </li>
+
                 @if (empty(Auth::user()->username))
-                    <li class="nav-item"><a class="nav-link" href="/login"><i class="bi bi-box-arrow-right"></i> Login</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">
+                            <i class="bi bi-box-arrow-right"></i> Login
+                        </a>
+                    </li>
                 @else
-                    <li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">
+                            <i class="bi bi-box-arrow-left"></i> Logout
+                        </a>
+                    </li>
                 @endif
             </ul>
+
         </div>
     </nav>
 
     <div class="row-container">
+
         <div class="flexbox-wrapper">
             @foreach ($thread as $thread)
                 <div class="thread-container">
                     <div class="inline-flex-row">
                         <div class="inline-flex-col">
                             <p>{{$thread->thread_description}}</p>
-                            <p>Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread->timestamp))->diffForHumans()}}</p>
-                            <p><a href="profile/{{$thread->username}}"><i class="bi bi-person-fill"></i> {{$thread->username}}</a></p>
+                            <p>
+                                Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread->timestamp))->diffForHumans()}}
+                            </p>
+                            <p>
+                                <a href="profile/{{$thread->username}}">
+                                    <i class="bi bi-person-fill"></i> {{$thread->username}}
+                                </a>
+                            </p>
                         </div>
+
                         @if ($bookmarked == true)
-                            <a href="/{{$forum_name}}/remove_bookmark/{{$thread->thread_id}}"><button class="reply"><i class="bi bi-bookmark-heart-fill bookmark"></i></button></a>
+                            <a href="/{{$forum_name}}/remove_bookmark/{{$thread->thread_id}}">
+                                <button class="reply">
+                                    <i class="bi bi-bookmark-heart-fill bookmark"></i>
+                                </button>
+                            </a>
                         @else
-                            <a href="/{{$forum_name}}/bookmark/{{$thread->thread_id}}"><button class="reply"><i class="bi bi-bookmark bookmark"></i></button></a>
+                            <a href="/{{$forum_name}}/bookmark/{{$thread->thread_id}}">
+                                <button class="reply">
+                                    <i class="bi bi-bookmark bookmark"></i>
+                                </button>
+                            </a>
                         @endif
                     </div>
-                    <button class="reply" type="button" data-toggle="modal" data-target="#createreply"><i class="bi bi-reply-fill"></i> Reply</button>
+
+                    <button class="reply" type="button" data-toggle="modal" data-target="#createreply">
+                        <i class="bi bi-reply-fill"></i> Reply
+                    </button>
+
                     @if ($thread->tag == 1)
-                        <a href="/{{$forum_name}}/unresolved/{{$thread->thread_id}}"><button class="reply resolved" type="button"><i class="bi bi-award-fill"></i> Resolved</button></a>
+                        <a href="/{{$forum_name}}/unresolved/{{$thread->thread_id}}">
+                            <button class="reply resolved" type="button">
+                                <i class="bi bi-award-fill"></i> Resolved
+                            </button>
+                        </a>
                     @else
-                        <a href="/{{$forum_name}}/resolved/{{$thread->thread_id}}"><button class="reply resolved" type="button"><i class="bi bi-award"></i> Resolved</button></a>
+                        <a href="/{{$forum_name}}/resolved/{{$thread->thread_id}}">
+                            <button class="reply resolved" type="button">
+                                <i class="bi bi-award"></i> Resolved
+                            </button>
+                        </a>
                     @endif
                 </div>
             @endforeach
+
             <h3>Answers</h3>
+
             @foreach ($replies as $replies)
                 <div class="thread-container">
                     <p>{{$replies->thread_replies}}</p>
-                    <p>Posted: {{Carbon\Carbon::createFromTimestamp(strtotime($replies->timestamp))->diffForHumans()}}</p>
-                    <p><a href="profile/{{$replies->username}}"><i class="bi bi-person-fill"></i> {{$replies->username}}</a></p>
-                    <button class="reply" type="button" data-toggle="modal" data-target="#createreply"><i class="bi bi-reply-fill reply"></i> Reply</button>
+                    <p>
+                        Posted: {{Carbon\Carbon::createFromTimestamp(strtotime($replies->timestamp))->diffForHumans()}}
+                    </p>
+                    <p>
+                        <a href="profile/{{$replies->username}}">
+                            <i class="bi bi-person-fill"></i> {{$replies->username}}
+                        </a>
+                    </p>
+                    <button class="reply" type="button" data-toggle="modal" data-target="#createreply">
+                        <i class="bi bi-reply-fill reply"></i> Reply
+                    </button>
                 </div>
             @endforeach
         </div>
+
         <div class="create-thread">
+
             <div class="filter-wrapper">
                 <span><i class="bi bi-calendar4-range"></i> Date Added:</span>
+
                 @if ($sort == true)
-                    <a href="/{{$forum_id}}/{{$thread_id}}"><button><i class="bi bi-calendar3-week"></i> Latest</button></a>
-                    <a href="/{{$forum_id}}/{{$thread_id}}/sort"><button><i class="bi bi-calendar3"></i> Earliest</button></a>
-                    <a href="/{{$forum_id}}/{{$thread_id}}"><i class="bi bi-bootstrap-reboot"></i> Reset filters</a>
+                    <a href="/{{$forum_id}}/{{$thread_id}}">
+                        <button>
+                            <i class="bi bi-calendar3-week"></i> Latest
+                        </button>
+                    </a>
+                    <a href="/{{$forum_id}}/{{$thread_id}}/sort">
+                        <button>
+                            <i class="bi bi-calendar3"></i> Earliest
+                        </button>
+                    </a>
+                    <a href="/{{$forum_id}}/{{$thread_id}}">
+                        <i class="bi bi-bootstrap-reboot"></i> Reset filters
+                    </a>
                 @else
-                    <a href="/{{$forum_id}}/{{$thread_id}}"><button><i class="bi bi-calendar3-week"></i> Latest</button></a>
-                    <a href="/{{$forum_id}}/{{$thread_id}}/sort"><button><i class="bi bi-calendar3"></i> Earliest</button></a>
+                    <a href="/{{$forum_id}}/{{$thread_id}}">
+                        <button>
+                            <i class="bi bi-calendar3-week"></i> Latest
+                        </button>
+                    </a>
+                    <a href="/{{$forum_id}}/{{$thread_id}}/sort">
+                        <button>
+                            <i class="bi bi-calendar3"></i> Earliest
+                        </button>
+                    </a>
                 @endif
             </div>
+
             <div id="createreply" class="modal fade">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div>
+
                             <form id="replyform" class="threadform" action="/{{$forum_id}}/{{$thread_id}}/createreply" method="POST">
                                 @csrf
                                 <h3>Add a new Reply</h3>
@@ -93,14 +179,18 @@
                                         placeholder="Enter your reply here..."
                                     ></textarea>
                                 </div>
+
                                 <button type="submit">Create</button>
                                 <button type="button" data-dismiss="modal">Close</button>
                             </form>
+
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
+
     </div>
 
     <script>

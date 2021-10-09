@@ -10,26 +10,54 @@
 </head>
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
-        <a class="navbar-brand" href="/"><i class="fas fa-paper-plane logo-size"></i> Laraquest</a>
+        <a class="navbar-brand" href="/">
+            <i class="fas fa-paper-plane logo-size"></i> Laraquest
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="/"><i class="bi bi-files"></i> Forums</a></li>
-                <li class="nav-item"><a class="nav-link" href="/profile"><i class="bi bi-people-fill"></i> Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about"><i class="bi bi-info-circle"></i> About</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="bi bi-files"></i> Forums
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">
+                        <i class="bi bi-people-fill"></i> Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">
+                        <i class="bi bi-info-circle"></i> About
+                    </a>
+                </li>
+
                 @if (empty(Auth::user()->username))
-                    <li class="nav-item"><a class="nav-link" href="/login"><i class="bi bi-box-arrow-right"></i> Login</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">
+                            <i class="bi bi-box-arrow-right"></i> Login
+                        </a>
+                    </li>
                 @else
-                    <li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">
+                            <i class="bi bi-box-arrow-left"></i> Logout
+                        </a>
+                    </li>
                 @endif
             </ul>
+
         </div>
     </nav>
 
     <div class="row-container">
+
         <div class="flexbox-wrapper">
+
             @foreach ($forum as $forum)
                 <a href="/forum/{{$forum->forum_id}}">
                     <div class="forum-container">
@@ -39,18 +67,31 @@
                     </div>
                 </a>
             @endforeach
+
         </div>
+
         <div class="create-forum">
-            <button class="forumbutton" type="button" data-toggle="modal" data-target="#createforum"><i class="bi bi-files"></i> Create Forum</button>
+
+            <button class="forumbutton" type="button" data-toggle="modal" data-target="#createforum">
+                <i class="bi bi-files"></i> Create Forum
+            </button>
+
             <div id="createforum" class="modal fade">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div>
+                            
                             <form id="forumform" class="forumform" action="/createforum" method="POST">
                                 @csrf
                                 <h3>Create a Forum</h3>
+
                                 <div>
-                                    <input class="forumtext" name="forum_name" placeholder="Forum Title" type="text">
+                                    <input class="forumtext"
+                                        name="forum_name"
+                                        placeholder="Forum Title"
+                                        type="text"
+                                    />
+                                    
                                     <textarea
                                         id="textarea"
                                         class="description"
@@ -62,13 +103,16 @@
                                         placeholder="Provide a short description..."
                                     ></textarea>
                                 </div>
+
                                 <button type="submit">Create</button>
                                 <button type="button" data-dismiss="modal">Close</button>
                             </form>
+
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 

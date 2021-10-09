@@ -11,15 +11,28 @@
 
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
-        <a class="navbar-brand" href="/"><i class="fas fa-paper-plane logo-size"></i> Laraquest</a>
+        <a class="navbar-brand" href="/">
+            <i class="fas fa-paper-plane logo-size"></i> Laraquest
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="/"><i class="bi bi-files"></i> Forums</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about"><i class="bi bi-info-circle"></i> About</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="bi bi-files"></i> Forums
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">
+                        <i class="bi bi-info-circle"></i> About
+                    </a>
+                </li>
             </ul>
+
         </div>
     </nav>
     
@@ -27,10 +40,13 @@
         @csrf
         <h3><i class="fas fa-feather-alt logo-feather"></i>Register</h3>
         <div class="flexbox-container">
+
             <div class="flex-item1">
                 <i class="fas fa-paper-plane logo"></i>
             </div>
+
             <div class="flex-item2">
+
                 <div>
                     <input
                         type="text"
@@ -51,6 +67,7 @@
                         required=""
                     />
                 </div>
+
                 <div>
                     <input
                         type="password"
@@ -59,13 +76,17 @@
                         required=""
                     />
                 </div>
+
                 <button type="submit">Register</button>
                 <button type="reset">Reset</button>
+
                 <div>
                     Already registered,
                     <a href="/login">Sign In!</a>
                 </div>
+
             </div>
+
         </div>
     </form>
 

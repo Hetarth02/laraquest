@@ -33,16 +33,16 @@ body {
     margin-bottom: 1rem;
 }
 
-.menu button{
+.menu button {
     border: transparent;
     outline: none;
 }
 
-.menu button:hover{
+.menu button:hover {
     font-size: 1rem;
 }
 
-.menu a{
+.menu a {
     text-align: center;
     font-size: 1.2rem;
 }
@@ -51,7 +51,7 @@ body {
     font-size: 1.45rem;
 }
 
-.menu a:hover{
+.menu a:hover {
     font-weight: bold;
 }
 

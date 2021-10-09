@@ -10,25 +10,52 @@
 </head>
 <body>
     <nav class="navbar sticky-top navbar-dark menu">
-        <a class="navbar-brand" href="/"><i class="fas fa-paper-plane logo-size"></i> Laraquest</a>
+        <a class="navbar-brand" href="/">
+            <i class="fas fa-paper-plane logo-size"></i> Laraquest
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="/"><i class="bi bi-files"></i> Forums</a></li>
-                <li class="nav-item"><a class="nav-link" href="/profile"><i class="bi bi-people-fill"></i> Profile</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about"><i class="bi bi-info-circle"></i> About</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="bi bi-files"></i> Forums
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">
+                        <i class="bi bi-people-fill"></i> Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">
+                        <i class="bi bi-info-circle"></i> About
+                    </a>
+                </li>
+
                 @if (empty(Auth::user()->username))
-                    <li class="nav-item"><a class="nav-link" href="/login"><i class="bi bi-box-arrow-right"></i> Login</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">
+                            <i class="bi bi-box-arrow-right"></i> Login
+                        </a>
+                    </li>
                 @else
-                    <li class="nav-item"><a class="nav-link" href="/logout"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">
+                            <i class="bi bi-box-arrow-left"></i> Logout
+                        </a
+                        li>
                 @endif
             </ul>
+
         </div>
     </nav>
 
     <div class="flex-row-container">
+
         <div class="content-container">
             <div class="outerbox">
                 <div class="col-wrapper">
@@ -42,7 +69,9 @@
                 </div>
             </div>
         </div>
+
         <hr>
+
         <div class="content-container">
             <div class="outerbox outerbox2">
                 @if ($thread_data == false)
@@ -54,13 +83,16 @@
                     <a href="../{{$thread[0]->forum_id}}/{{$thread[0]->thread_id}}">
                         <div class="thread-container">
                             <p>{{$thread[0]->thread_description}}</p>
-                            <p>Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread[0]->timestamp))->diffForHumans()}}</p>
+                            <p>
+                                Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread[0]->timestamp))->diffForHumans()}}
+                            </p>
                         </div>
                     </a>
                     @endforeach
                 @endif
             </div>
         </div>
+
     </div>
 
     <script>

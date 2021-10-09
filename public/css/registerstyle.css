@@ -42,7 +42,8 @@
 }
 
 .registerform input[type="text"],
-input[type="password"], input[type="email"] {
+.registerform input[type="password"],
+.registerform input[type="email"] {
     width: 80%;
     border: 1px solid white;
     border-radius: 24px;
@@ -56,7 +57,8 @@ input[type="password"], input[type="email"] {
 }
 
 .registerform input[type="text"]:hover,
-.registerform input[type="password"]:hover, .registerform input[type="email"]:hover {
+.registerform input[type="password"]:hover,
+.registerform input[type="email"]:hover {
     border: 1px solid #8c1bce;
 }
 
@@ -68,7 +70,8 @@ input[type="password"], input[type="email"] {
     opacity: 0.7;
 }
 
-.registerform button[type="submit"], .registerform button[type="reset"] {
+.registerform button[type="submit"],
+.registerform button[type="reset"] {
     border: 1px solid white;
     border-radius: 24px;
     padding: 0.6rem;
@@ -83,7 +86,8 @@ input[type="password"], input[type="email"] {
     transition: 0.25s;
 }
 
-.registerform button[type="submit"]:hover, .registerform button[type="reset"]:hover {
+.registerform button[type="submit"]:hover,
+.registerform button[type="reset"]:hover {
     color: whitesmoke;
     background: #651494;
 }
@@ -116,7 +120,8 @@ input[type="password"], input[type="email"] {
     }
 
     .registerform input[type="text"],
-    .registerform input[type="password"], .registerform input[type="email"] {
+    .registerform input[type="password"],
+    .registerform input[type="email"] {
         padding: 0.5rem;
         width: 70%;
     }
