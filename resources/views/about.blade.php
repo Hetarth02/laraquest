@@ -109,7 +109,7 @@
             <h3>About Me...</h3>
             <p class="description">
                 Hello,
-                I am Hetarth Shah, the face behind Laraquest. Web development is not my forte, but I can say my skills are novice. My actual ambitions are to be a Python Programmer. I am my own teacher, and have self-taught myself with a certain degree of experience in working with Laravel framework. I am constantly pushing myself out of the comfort zone through this web development journey, seeing how far can I go. Though I usually have multiple projects on hand to further increase my learning; I am open to any collaboratory projects.
+                I am Hetarth Shah, the face behind Laraquest. I am my own teacher, and have self-taught myself with a certain degree of experience in working with Laravel framework. I am constantly pushing myself out of the comfort zone through this web development journey, seeing how far can I go. Though I usually have multiple projects on hand to further increase my learning; I am open to any collaboratory projects.
             </p>
             <h4>Found any <i class="bi bi-bug-fill bug"></i>(Bugs),</h4>
             <h3>Want to do a project together?</h3>
