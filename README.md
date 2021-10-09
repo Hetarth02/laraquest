@@ -36,26 +36,25 @@ If, you do not have PHP, MySQL or Composer Package manager installed follow thes
 - Install Composer Package manager from [here.](https://getcomposer.org/)
 ## Environment Variables
 
-Open XAMPP Control Panel and activate MySql Server. After that, go to your browser and in search bar type the following,
-
-```localhost/phpmyadmin```
-
-When cloned/downloaded the project, you will need to create a `.env` file if you don't have one already and change the following environment variables to run this project.
+Open XAMPP Control Panel and activate MySql Server. After that, go to your browser and in search bar type the following, ```localhost/phpmyadmin```
 
 Now create a new database.
 
-Next simply, copy and paste and rename `.env.example` to `.env` in your project folder.
+When cloned/downloaded the project, you will need to create a `.env` file if you don't have one already and change the following environment variables to run this project.
 
-Now, in your `.env` change the
+For this simply, copy and paste and rename `.env.example` to `.env` in your project folder.
 
-`DB_DATABASE=laravel`
+> Note - Do not replace `.env.example`
 
-to
+Now, in your `.env` locate and change the
 
-`DB_DATABASE=YOUR_DATABASE_NAME`
+`DB_DATABASE=laravel` to `DB_DATABASE=YOUR_DATABASE_NAME`
 
-After saving this, open your command prompt and `cd` into your project directory and then run the following commands to start the local server with project,
+After saving your changes, open your command prompt and `cd` into your project directory and then run the following commands to start the local server with project,
 
+```bash
+    php artisan migrate
+``` 
 ```bash
     composer update
 ```
