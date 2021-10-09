@@ -82,13 +82,13 @@ After saving your changes, open your command prompt and `cd` into your project d
 
 > Note - It is required to be connected to internet for the CDNs to work.
   
-## Feedback
+## :memo: Feedback
 
 If you have any feedback, please reach out to me at hetarth02@gmail.com
 
-## 🚀 About Me
+## About Me
 
-Hi, I am Hetarth, the face behind Laraquest.
+:wave: Hi, I am Hetarth, the face behind Laraquest.
 
 I am my own teacher, and have self-taught myself with a certain degree of experience in working with Laravel framework. I am constantly pushing myself out of the comfort zone through this web development journey, seeing how far can I go. I am open to any collaboratory projects.
   
@@ -101,6 +101,6 @@ I am my own teacher, and have self-taught myself with a certain degree of experi
 - SQL
 - Python
   
-## Support/Contact
+## :mailbox_with_mail: Support/Contact
 
 For support or Contact, email me at hetarth02@gmail.com
