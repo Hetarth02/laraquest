@@ -16,10 +16,14 @@ Clone the project from git CLI using
     git clone https://github.com/Hetarth02/laraquest.git
 ```
 
+Or download and extract the project in your project directory
+
 Go to your project directory
 
 ```bash
     cd project_folder
+```
+```bash
     cd laraquest
 ```
 
@@ -33,7 +37,8 @@ If, you do not have PHP, MySQL or Composer Package manager installed follow thes
 
 - Download and setup [XAMPP](https://www.apachefriends.org/index.html) for PHP and MySQL.
 
-- Install Composer Package manager from [here.](https://getcomposer.org/)
+- Download and Install Composer Package manager from [here.](https://getcomposer.org/)
+
 ## Environment Variables
 
 Open XAMPP Control Panel and activate MySql Server. After that, go to your browser and in search bar type the following, ```localhost/phpmyadmin```
