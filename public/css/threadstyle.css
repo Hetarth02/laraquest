@@ -148,6 +148,11 @@
     transition: 0.25s;
 }
 
+.threadform button[type="submit"] {
+    color: white;
+    background-color: #46a438;
+}
+
 .threadform button[type="submit"]:hover,
 .threadform button[type="button"]:hover {
     color: white;

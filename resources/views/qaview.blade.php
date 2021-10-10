@@ -65,7 +65,7 @@
                                 Asked: {{Carbon\Carbon::createFromTimestamp(strtotime($thread->timestamp))->diffForHumans()}}
                             </p>
                             <p>
-                                <a href="profile/{{$thread->username}}">
+                                <a href="/profile/{{$thread->username}}">
                                     <i class="bi bi-person-fill"></i> {{$thread->username}}
                                 </a>
                             </p>
@@ -115,7 +115,7 @@
                         Posted: {{Carbon\Carbon::createFromTimestamp(strtotime($replies->timestamp))->diffForHumans()}}
                     </p>
                     <p>
-                        <a href="profile/{{$replies->username}}">
+                        <a href="/profile/{{$replies->username}}">
                             <i class="bi bi-person-fill"></i> {{$replies->username}}
                         </a>
                     </p>

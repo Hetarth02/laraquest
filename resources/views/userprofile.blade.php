@@ -61,7 +61,7 @@
                 <div class="col-wrapper">
                     @foreach ($data as $data)
                         <img src={{$data->profile_pic}} alt="Profile Pic">
-                        <div class="flex-col-container">
+                        <div class="flex-col-container nobookmarks">
                             <h3>{{$data->username}}</h3>
                             <h4>{{$data->name}}</h4>
                         </div>

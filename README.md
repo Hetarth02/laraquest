@@ -8,23 +8,34 @@ Laraquest is a social support platform where users can create their forums and t
 
 ## Run Locally
 
+If, you do not have PHP, MySQL or Composer Package manager installed follow these steps and after the requirements are met follow the above mentioned steps.
+
+- Download and setup [XAMPP](https://www.apachefriends.org/index.html) for PHP and MySQL.
+
+- Download and Install Composer Package manager from [here.](https://getcomposer.org/)
+
+> Note - For windows download Composer-setup.exe by clicking Get Started on website.
+
 Assuming you have PHP, MySQL and Composer Package manager installed in your system,
 
-Clone the project from git CLI using
+Download and extract the project in your project directory or,
 
+Clone the project in your preferred folder from git CLI using
+
+```bash
+    cd your_project_folder
+```
 ```bash
     git clone https://github.com/Hetarth02/laraquest.git
 ```
 
-Or download and extract the project in your project directory
-
-Go to your project directory
+Go to your project directory in your preferred IDE,
 
 ```bash
-    cd project_folder
+    cd your_project_folder
 ```
 ```bash
-    cd laraquest
+    cd laraquest-main
 ```
 
 Install dependencies
@@ -32,16 +43,9 @@ Install dependencies
 ```bash
     composer update
 ```
-
-If, you do not have PHP, MySQL or Composer Package manager installed follow these steps and after the requirements are met follow the above mentioned steps.
-
-- Download and setup [XAMPP](https://www.apachefriends.org/index.html) for PHP and MySQL.
-
-- Download and Install Composer Package manager from [here.](https://getcomposer.org/)
-
 ## Environment Variables
 
-Open XAMPP Control Panel and activate MySql Server. After that, go to your browser and in search bar type the following, ```localhost/phpmyadmin```
+Open XAMPP Control Panel and activate Apache and MySql Server. After that, go to your browser and in search bar type the following, ```localhost/phpmyadmin```
 
 Now create a new database.
 
@@ -54,22 +58,27 @@ For this simply, copy and paste and rename `.env.example` to `.env` in your proj
 Now, in your `.env` locate and change the
 
 `DB_DATABASE=laravel` to `DB_DATABASE=YOUR_DATABASE_NAME`
+> Note - Write name of your DB which you created in XAMPP
 
-After saving your changes, open your command prompt and `cd` into your project directory and then run the following commands to start the local server with project,
+After saving your changes, in your command prompt run the following commands to start the poject on your local server,
 
 ```bash
     php artisan migrate
-``` 
+```
+```bash
+    php artisan key:generate
+```
 ```bash
     composer update
 ```
 ```bash
     php artisan serve
-```  
+```
 ## Features
 
 - Create your own Forums
 - Bookmark your favourite threads
+- Change thread status to resolved
 - Responsive UI
 
 ## Tech Stack

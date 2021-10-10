@@ -143,6 +143,12 @@
     transition: 0.25s;
 }
 
+
+.forumform button[type="submit"] {
+    color: white;
+    background-color: #46a438;
+}
+
 .forumform button[type="submit"]:hover,
 .forumform button[type="button"]:hover {
     color: white;

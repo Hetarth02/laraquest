@@ -46,7 +46,7 @@ class UserController extends Controller
 
         //Check if user has bookmarks
         if (empty($thread)) {
-            return view('profile')->with('data', $data)
+            return view('userprofile')->with('data', $data)
                 ->with('thread_data', false);
         } else {
             $thread_data = [];
