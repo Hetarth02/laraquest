@@ -58,7 +58,7 @@ For this simply, copy and paste and rename `.env.example` to `.env` in your proj
 Now, in your `.env` locate and change the
 
 `DB_DATABASE=laravel` to `DB_DATABASE=YOUR_DATABASE_NAME`
-> Note - Write name of your DB which you created in XAMPP
+> Note - Write name of your DB which you created in `localhost/phpmyadmin`
 
 After saving your changes, in your command prompt run the following commands to start the poject on your local server,
 
