@@ -37,24 +37,29 @@ class UserController extends Controller
     public function user_profile($username)
     {
         Log::info("Coming into user_profile function");
-        //If the user clicks on his own username
-        if ($username == (Auth::user()->username)) {
-            return redirect('/profile');
-        }
-        $data = DB::select('select name, username, user_subs, profile_pic from users where username = ?', [$username]);
-        $thread = json_decode($data[0]->user_subs, true);
-
-        //Check if user has bookmarks
-        if (empty($thread)) {
-            return view('userprofile')->with('data', $data)
-                ->with('thread_data', false);
+        //If user logged in, display his profile.
+        if (empty(Auth::user()->username)) {
+            return redirect('/login');
         } else {
-            $thread_data = [];
-            foreach ($thread as $thread) {
-                array_push($thread_data, DB::select('select * from threads where thread_id = ?', [$thread]));
+            //If the user clicks on his own username
+            if ($username == (Auth::user()->username)) {
+                return redirect('/profile');
             }
-            return view('userprofile')->with('data', $data)
-                ->with('thread_data', $thread_data);
+            $data = DB::select('select name, username, user_subs, profile_pic from users where username = ?', [$username]);
+            $thread = json_decode($data[0]->user_subs, true);
+
+            //Check if user has bookmarks
+            if (empty($thread)) {
+                return view('userprofile')->with('data', $data)
+                    ->with('thread_data', false);
+            } else {
+                $thread_data = [];
+                foreach ($thread as $thread) {
+                    array_push($thread_data, DB::select('select * from threads where thread_id = ?', [$thread]));
+                }
+                return view('userprofile')->with('data', $data)
+                    ->with('thread_data', $thread_data);
+            }
         }
     }
 
