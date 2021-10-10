@@ -7,12 +7,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 use Exception;
 
 class LoginController extends Controller
 {
     public function user_register(Request $request)
     {
+        Log::info("Coming into user_register function");
         $input = $request->all();
 
         //Validation
@@ -46,6 +48,7 @@ class LoginController extends Controller
 
     public function user_login(Request $request)
     {
+        Log::info("Coming into user_login function");
         $input = $request->all();
 
         //Validation
@@ -76,6 +79,7 @@ class LoginController extends Controller
 
     public function user_logout(Request $request)
     {
+        Log::info("Coming into user_logout function");
         //Deleting user session and all its data
         Session::flush();
         Auth::logout();

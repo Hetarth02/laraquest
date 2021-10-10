@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Exception;
 
 class UserController extends Controller
 {
     public function profile()
     {
+        Log::info("Coming into profile function");
         //If user logged in, display his profile.
         if (empty(Auth::user()->username)) {
             return redirect('/login');
@@ -34,6 +36,7 @@ class UserController extends Controller
 
     public function user_profile($username)
     {
+        Log::info("Coming into user_profile function");
         //If the user clicks on his own username
         if ($username == (Auth::user()->username)) {
             return redirect('/profile');
@@ -57,6 +60,7 @@ class UserController extends Controller
 
     public function bookmark(Request $request, $forum_id, $thread_id)
     {
+        Log::info("Coming into bookmark function");
         //If user is logged in then only add as bookmark
         if (empty(Auth::user()->username)) {
             return redirect('/login')->with('alert', 'Please login to Bookmark.');
@@ -79,6 +83,7 @@ class UserController extends Controller
 
     public function remove_bookmark(Request $request, $forum_id, $thread_id)
     {
+        Log::info("Coming into remove_bookmark function");
         //If user is logged in then only remove bookmark
         if (empty(Auth::user()->username)) {
             return redirect('/login')->with('alert', 'Please login');
@@ -120,6 +125,7 @@ class UserController extends Controller
 
     public function resolved($forum_name, $thread_id)
     {
+        Log::info("Coming into resolved function");
         //If user is logged in or not
         if (empty(Auth::user()->username)) {
             return redirect('/login')->with('alert', 'Please login');
@@ -142,6 +148,7 @@ class UserController extends Controller
 
     public function unresolved($forum_name, $thread_id)
     {
+        Log::info("Coming into unresolved function");
         //If user is logged in or not
         if (empty(Auth::user()->username)) {
             return redirect('/login')->with('alert', 'Please login');

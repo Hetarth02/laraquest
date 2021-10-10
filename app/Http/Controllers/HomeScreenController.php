@@ -4,17 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class HomeScreenController extends Controller
 {
     public function display_home_screen()
     {
+        Log::info("Coming into display_home_screen function");
         $forum = DB::select('select * from forums order by timestamp desc');
         return view('home')->with('forum', $forum);
     }
 
     public function thread_view($id)
     {
+        Log::info("Coming into thread_view function");
         $thread = DB::select('select * from threads where forum_id = ? order by timestamp desc', [$id]);
         $forum_name = DB::select('select forum_name from forums where forum_id = ?', [$id]);
         return view('thread')->with('thread', $thread)
@@ -25,6 +28,7 @@ class HomeScreenController extends Controller
 
     public function filter($id, $tag)
     {
+        Log::info("Coming into filter function");
         $forum_name = DB::select('select forum_name from forums where forum_id = ?', [$id]);
 
         //Checking which filter is applied
@@ -85,6 +89,7 @@ class HomeScreenController extends Controller
 
     public function qaview($forum_id, $thread_id)
     {
+        Log::info("Coming into qaview function");
         //Checking if user is logged in or not
         if (empty(Auth::user()->username)) {
             $forum_name = DB::select('select forum_name from forums where forum_id = ?', [$forum_id]);
@@ -131,6 +136,7 @@ class HomeScreenController extends Controller
 
     public function sort($forum_id, $thread_id)
     {
+        Log::info("Coming into sort function");
         //Checking if user is logged in or not
         if (empty(Auth::user()->username)) {
             $forum_name = DB::select('select forum_name from forums where forum_id = ?', [$forum_id]);

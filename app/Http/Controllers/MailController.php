@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class MailController extends Controller
 {
     public function sub_mail()
     {
+        Log::info("Coming into sub_mail function");
         //Including dependencies and generating new PHPMailer instance
         require base_path("vendor/autoload.php");
         $mail = new PHPMailer(true);
@@ -61,6 +63,7 @@ class MailController extends Controller
 
     public function forgot_password(Request $request)
     {
+        Log::info("Coming into forgot_password function");
         //Including dependencies and generating new PHPMailer instance
         require base_path("vendor/autoload.php");
         $mail = new PHPMailer(true);

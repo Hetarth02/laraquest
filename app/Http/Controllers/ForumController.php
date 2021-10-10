@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 use Exception;
 
 class ForumController extends Controller
 {
     public function create_forum(Request $request)
     {
+        Log::info("Coming into create_forum function");
         //If user is logged in then only create a forum
         if (empty(Auth::user()->username)) {
             return redirect('/login')->with('alert', 'Please login to create a forum.');
@@ -41,6 +43,7 @@ class ForumController extends Controller
 
     public function create_thread(Request $request, $id)
     {
+        Log::info("Coming into create_thead function");
         //If user is logged in then only create a thread
         if (empty(Auth::user()->username)) {
             return redirect('/login')->with('alert', 'Please login to ask a question.');
@@ -70,6 +73,7 @@ class ForumController extends Controller
 
     public function create_reply(Request $request, $forum_id, $id)
     {
+        Log::info("Coming into create_reply function");
         //If user is logged in then only let user reply
         if (empty(Auth::user()->username)) {
             return redirect('/login')->with('alert', 'Please login to reply.');
